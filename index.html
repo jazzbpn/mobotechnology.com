@@ -1,0 +1,1785 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Mobotechnology LLC — AI Sales & Marketing Automation</title>
+<meta name="description" content="Mobotechnology LLC delivers AI-powered sales and marketing automation. Based in Casper, WY. 200+ deployments, $120M+ revenue generated for clients.">
+<meta name="robots" content="index, follow">
+<meta name="author" content="Mobotechnology LLC">
+<meta property="og:title" content="Mobotechnology LLC — AI Sales & Marketing Automation">
+<meta property="og:description" content="AI-powered automation that turns pipelines into revenue — intelligently, at scale.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://mobotechnology.com">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#5B47F5">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png">
+<link rel="manifest" href="./site.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+/* ─────────────────────────────────────────────────────
+   DESIGN TOKENS
+───────────────────────────────────────────────────── */
+:root {
+  /* Brand */
+  --b50:  #EEEFFE;
+  --b100: #DDE0FD;
+  --b200: #BEC2FB;
+  --b400: #8B8FF8;
+  --b500: #5B47F5;
+  --b600: #4835E2;
+  --b700: #3727C8;
+
+  /* Gradients */
+  --g-brand: linear-gradient(135deg, #5B47F5 0%, #9333EA 100%);
+  --g-text:  linear-gradient(135deg, #4835E2 0%, #9333EA 100%);
+  --g-hero:  radial-gradient(ellipse 90% 60% at 50% -5%, rgba(91,71,245,.07) 0%, transparent 65%),
+             radial-gradient(ellipse 50% 40% at 95% 20%, rgba(147,51,234,.05) 0%, transparent 55%);
+
+  /* Surfaces */
+  --white:   #FFFFFF;
+  --soft:    #F8F9FD;
+  --muted:   #F1F4FB;
+
+  /* Neutral */
+  --n200: #E4E7F0;
+  --n300: #CDD3E1;
+  --n400: #9AA2B8;
+  --n500: #677090;
+  --n600: #475170;
+  --n700: #2E3650;
+  --n800: #1A2138;
+  --n900: #0D1120;
+
+  /* Text */
+  --th: #0D1120;   /* headings  */
+  --tb: #4A5270;   /* body      */
+  --tm: #8A93AD;   /* muted     */
+
+  /* Dark section */
+  --dk:   #070B18;
+  --dk2:  #0E1225;
+  --dkb:  rgba(255,255,255,.07);
+  --dkt1: #F0F2FA;
+  --dkt2: #8891AA;
+  --dkt3: #505870;
+
+  /* Shadows */
+  --sh0: 0 1px 2px rgba(13,17,32,.04);
+  --sh1: 0 1px 3px rgba(13,17,32,.06), 0 2px 8px rgba(13,17,32,.04);
+  --sh2: 0 2px 8px rgba(13,17,32,.06), 0 6px 20px rgba(13,17,32,.06);
+  --sh3: 0 4px 14px rgba(13,17,32,.07), 0 12px 36px rgba(13,17,32,.07);
+  --sh-b: 0 2px 8px rgba(91,71,245,.28), 0 8px 24px rgba(91,71,245,.14);
+
+  /* Typography */
+  --fd: 'Poppins', sans-serif;
+  --fb: 'Poppins', sans-serif;
+
+  /* Radii */
+  --r-sm:  8px;
+  --r-md:  12px;
+  --r-lg:  16px;
+  --r-xl:  20px;
+  --r-2xl: 28px;
+  --r-3xl: 40px;
+  --r-pill:9999px;
+
+  /* Motion */
+  --ease: cubic-bezier(0,0,0.2,1);
+  --spring: cubic-bezier(0.34,1.56,0.64,1);
+
+  /* Layout */
+  --nav-h: 68px;
+  --wrap:  1280px;
+  --pad:   clamp(1rem,5vw,3rem);
+  --sec:   clamp(4rem,9vw,7rem);
+  --touch: 44px;
+}
+
+/* ─────────────────────────────────────────────────────
+   RESET
+───────────────────────────────────────────────────── */
+*,*::before,*::after { box-sizing:border-box; margin:0; padding:0; }
+html {
+  color-scheme: light;
+  -webkit-text-size-adjust:100%;
+  text-size-adjust:100%;
+  scrollbar-width:thin;
+  scrollbar-color:var(--n300) transparent;
+}
+@media(prefers-reduced-motion:no-preference){ html{ scroll-behavior:smooth; } }
+body {
+  font-family:var(--fb);
+  font-size:clamp(.9375rem,.9rem + .25vw,1.0625rem);
+  background:var(--white);
+  color:var(--tb);
+  line-height:1.68;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  overflow-x:hidden;
+  font-feature-settings:'kern'1,'liga'1,'calt'1;
+  padding-top:env(safe-area-inset-top);
+  padding-left:env(safe-area-inset-left);
+  padding-right:env(safe-area-inset-right);
+}
+img{display:block;max-width:100%;height:auto;}
+a{color:inherit;text-decoration:none;}
+button{font:inherit;cursor:pointer;border:none;background:none;color:inherit;-webkit-appearance:none;-webkit-tap-highlight-color:transparent;touch-action:manipulation;}
+ul{list-style:none;}
+input,textarea,select{font-size:max(16px,1rem);}
+p,h1,h2,h3,h4{overflow-wrap:break-word;word-break:break-word;}
+::selection{background:var(--b100);color:var(--b700);}
+:focus-visible{outline:2px solid var(--b500);outline-offset:3px;border-radius:4px;}
+::-webkit-scrollbar{width:6px;}
+::-webkit-scrollbar-track{background:transparent;}
+::-webkit-scrollbar-thumb{background:var(--n300);border-radius:var(--r-pill);}
+
+/* ─────────────────────────────────────────────────────
+   ACCESSIBILITY
+───────────────────────────────────────────────────── */
+.skip-link{
+  position:absolute;top:-100%;left:1rem;z-index:9999;
+  background:var(--b500);color:#fff;
+  padding:.625rem 1.25rem;border-radius:var(--r-md);
+  font-weight:600;font-size:.9375rem;
+  transition:top 200ms var(--ease);
+}
+.skip-link:focus{top:1rem;}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;}
+
+/* ─────────────────────────────────────────────────────
+   LAYOUT
+───────────────────────────────────────────────────── */
+.wrap{width:100%;max-width:var(--wrap);margin-inline:auto;padding-inline:var(--pad);}
+.section{padding-block:var(--sec);}
+.bg-soft{background:var(--soft);}
+.bg-dark{background:var(--dk);}
+
+/* ─────────────────────────────────────────────────────
+   TYPOGRAPHY
+───────────────────────────────────────────────────── */
+.display{
+  font-family:var(--fd);
+  font-size:clamp(2.5rem,6vw+.25rem,5.25rem);
+  font-weight:800;line-height:1.06;letter-spacing:-.038em;
+  color:var(--th);
+}
+.h2{
+  font-family:var(--fd);
+  font-size:clamp(1.75rem,3.5vw,3rem);
+  font-weight:700;line-height:1.12;letter-spacing:-.025em;
+  color:var(--th);
+}
+.h3{
+  font-family:var(--fd);
+  font-size:clamp(1.0625rem,1.8vw,1.25rem);
+  font-weight:700;line-height:1.3;
+  color:var(--th);
+}
+.body-lg{font-size:clamp(.9375rem,1.5vw,1.125rem);line-height:1.8;color:var(--tb);}
+.grad-text{
+  background:var(--g-text);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+}
+/* Dark section text overrides */
+.bg-dark .h2{color:var(--dkt1);}
+.bg-dark .body-lg{color:var(--dkt2);}
+
+/* ─────────────────────────────────────────────────────
+   BUTTONS
+───────────────────────────────────────────────────── */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:.5rem;
+  min-height:var(--touch);padding:.75rem 1.625rem;
+  font-size:clamp(.875rem,1.2vw,.9375rem);font-weight:600;font-family:var(--fb);
+  border-radius:var(--r-pill);border:1.5px solid transparent;
+  white-space:nowrap;transition:all 180ms var(--ease);
+  -webkit-tap-highlight-color:transparent;touch-action:manipulation;
+  user-select:none;-webkit-user-select:none;
+}
+.btn-primary{
+  background:var(--b500);color:#fff;
+  border-color:var(--b600);
+  box-shadow:var(--sh-b);
+}
+@media(hover:hover){
+  .btn-primary:hover{background:var(--b600);transform:translateY(-2px);box-shadow:0 4px 16px rgba(91,71,245,.35),0 12px 32px rgba(91,71,245,.18);}
+}
+.btn-primary:active{transform:translateY(0) scale(.97);}
+.btn-outline{
+  background:transparent;color:var(--th);
+  border-color:var(--n200);box-shadow:var(--sh0);
+}
+@media(hover:hover){
+  .btn-outline:hover{border-color:var(--n300);background:var(--soft);transform:translateY(-2px);box-shadow:var(--sh1);}
+}
+.btn-outline:active{transform:translateY(0) scale(.97);}
+.btn-white{background:#fff;color:var(--b600);border-color:rgba(255,255,255,.3);box-shadow:0 2px 8px rgba(0,0,0,.12);}
+@media(hover:hover){.btn-white:hover{background:#fff;transform:translateY(-2px);box-shadow:0 6px 20px rgba(0,0,0,.16);}}
+.btn-white:active{transform:translateY(0) scale(.97);}
+.btn-lg{padding:.9375rem 2.25rem;font-size:1rem;}
+
+/* ─────────────────────────────────────────────────────
+   PILL / BADGE
+───────────────────────────────────────────────────── */
+.pill{
+  display:inline-flex;align-items:center;gap:.375rem;
+  padding:.3125rem 1rem;border-radius:var(--r-pill);
+  font-size:.8125rem;font-weight:600;
+  background:var(--b50);color:var(--b600);
+  border:1px solid var(--b100);
+}
+.pill .dot{width:6px;height:6px;border-radius:50%;background:var(--b500);flex-shrink:0;}
+
+/* ─────────────────────────────────────────────────────
+   NAVBAR
+───────────────────────────────────────────────────── */
+.nav{
+  position:fixed;top:0;left:0;right:0;z-index:1000;
+  height:var(--nav-h);display:flex;align-items:center;
+  padding-inline:var(--pad);
+  transition:background 250ms var(--ease),box-shadow 250ms var(--ease);
+}
+.nav.scrolled{
+  background:rgba(255,255,255,.92);
+  backdrop-filter:blur(24px) saturate(180%);
+  -webkit-backdrop-filter:blur(24px) saturate(180%);
+  box-shadow:0 1px 0 var(--n200), var(--sh0);
+}
+.nav__inner{
+  width:100%;max-width:var(--wrap);margin-inline:auto;
+  display:flex;align-items:center;justify-content:space-between;gap:1.5rem;
+}
+.nav__brand{
+  display:flex;align-items:center;gap:.5625rem;
+  font-family:var(--fd);font-size:1.1875rem;font-weight:800;
+  color:var(--th);letter-spacing:-.025em;flex-shrink:0;
+  min-height:var(--touch);user-select:none;
+}
+.nav__logo{
+  width:32px;height:32px;border-radius:var(--r-sm);
+  flex-shrink:0;display:block;object-fit:contain;
+}
+.nav__links{display:none;align-items:center;gap:.125rem;}
+.nav__link{
+  display:flex;align-items:center;
+  min-height:var(--touch);padding-inline:.875rem;
+  font-size:.9375rem;font-weight:500;color:var(--n600);
+  border-radius:var(--r-md);transition:all 150ms var(--ease);
+}
+@media(hover:hover){.nav__link:hover{color:var(--th);background:var(--soft);}}
+.nav__cta{display:none;}
+.nav__ham{
+  display:flex;align-items:center;justify-content:center;
+  width:var(--touch);height:var(--touch);
+  border-radius:var(--r-sm);border:1.5px solid var(--n200);
+  color:var(--n600);background:var(--white);
+  box-shadow:var(--sh0);
+}
+
+/* ─────────────────────────────────────────────────────
+   MOBILE MENU
+───────────────────────────────────────────────────── */
+.mmenu{
+  display:none;position:fixed;inset:0;z-index:999;
+  background:rgba(255,255,255,.98);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
+  flex-direction:column;align-items:center;justify-content:center;
+  gap:.25rem;padding:2rem;
+  padding-top:max(2rem,env(safe-area-inset-top));
+  padding-bottom:max(2rem,env(safe-area-inset-bottom));
+  animation:fadeIn 200ms var(--ease);
+}
+.mmenu.open{display:flex;}
+.mmenu__close{
+  position:absolute;top:max(1rem,env(safe-area-inset-top));right:1rem;
+  width:var(--touch);height:var(--touch);
+  border-radius:var(--r-sm);border:1.5px solid var(--n200);
+  display:flex;align-items:center;justify-content:center;
+  color:var(--n600);background:var(--white);box-shadow:var(--sh0);
+}
+.mmenu__link{
+  font-family:var(--fd);font-size:clamp(1.5rem,5vw,2.25rem);font-weight:700;
+  color:var(--n600);padding:.4rem 1.25rem;
+  min-height:var(--touch);display:flex;align-items:center;
+  border-radius:var(--r-lg);transition:all 150ms var(--ease);
+}
+@media(hover:hover){.mmenu__link:hover{color:var(--th);background:var(--soft);}}
+.mmenu__link:active{color:var(--b500);}
+
+/* ─────────────────────────────────────────────────────
+   HERO
+───────────────────────────────────────────────────── */
+.hero{
+  position:relative;min-height:100svh;
+  display:flex;align-items:center;
+  padding-top:var(--nav-h);
+  background:var(--white);
+  overflow:hidden;
+}
+.hero::before{
+  content:'';position:absolute;inset:0;pointer-events:none;
+  background:var(--g-hero);
+}
+/* Decorative grid dots */
+.hero::after{
+  content:'';position:absolute;inset:0;pointer-events:none;
+  background-image:radial-gradient(circle,var(--n200) 1px,transparent 1px);
+  background-size:32px 32px;
+  opacity:.55;
+  mask-image:radial-gradient(ellipse 70% 60% at 50% 50%,black 0%,transparent 100%);
+  -webkit-mask-image:radial-gradient(ellipse 70% 60% at 50% 50%,black 0%,transparent 100%);
+}
+.hero__content{
+  position:relative;z-index:1;
+  max-width:820px;
+  padding-block:clamp(3rem,7vw,5.5rem);
+}
+.hero__pill{margin-bottom:1.875rem;}
+.hero__title{margin-bottom:clamp(1rem,2vw,1.375rem);}
+.hero__sub{max-width:580px;margin-bottom:clamp(2rem,3.5vw,2.75rem);}
+.hero__ctas{
+  display:flex;align-items:center;flex-wrap:wrap;
+  gap:.75rem;margin-bottom:clamp(3rem,6vw,4.5rem);
+}
+/* Stats row */
+.hero__stats{
+  display:grid;
+  grid-template-columns:repeat(2,auto);
+  gap:0;
+  width:fit-content;
+  border:1.5px solid var(--n200);
+  border-radius:var(--r-xl);
+  background:var(--white);
+  box-shadow:var(--sh1);
+  overflow:hidden;
+}
+.hero__stat{
+  padding:clamp(1rem,2.5vw,1.375rem) clamp(1.25rem,3vw,2rem);
+  border-right:1.5px solid var(--n200);
+  border-bottom:1.5px solid var(--n200);
+}
+.hero__stat:nth-child(2n){border-right:none;}
+.hero__stat:nth-child(3),.hero__stat:nth-child(4){border-bottom:none;}
+.hero__stat-val{
+  font-family:var(--fd);
+  font-size:clamp(1.375rem,3vw,1.875rem);
+  font-weight:800;letter-spacing:-.025em;line-height:1.1;
+  background:var(--g-text);-webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;background-clip:text;
+}
+.hero__stat-lbl{font-size:.8125rem;color:var(--tm);font-weight:500;margin-top:.2rem;}
+
+/* ─────────────────────────────────────────────────────
+   TRUSTED
+───────────────────────────────────────────────────── */
+.trusted{padding-block:clamp(2rem,4vw,2.75rem);}
+.trusted__label{
+  text-align:center;font-size:.75rem;font-weight:600;
+  letter-spacing:.1em;text-transform:uppercase;
+  color:var(--tm);margin-bottom:clamp(1.5rem,3vw,2rem);
+}
+.trusted__row{
+  display:flex;align-items:center;justify-content:center;
+  gap:clamp(.875rem,3.5vw,3.5rem);flex-wrap:wrap;
+}
+.trusted__name{
+  font-family:var(--fd);font-size:clamp(.8125rem,1.2vw,.9375rem);
+  font-weight:700;color:var(--n300);letter-spacing:-.01em;
+  white-space:nowrap;transition:color 200ms;
+}
+@media(hover:hover){.trusted__name:hover{color:var(--n500);}}
+
+/* ─────────────────────────────────────────────────────
+   SECTION HEADER
+───────────────────────────────────────────────────── */
+.sec-head{margin-bottom:clamp(2.5rem,5vw,4rem);}
+.sec-head--c{text-align:center;}
+.sec-head--c p{margin-inline:auto;}
+.eyebrow{display:flex;align-items:center;gap:.625rem;margin-bottom:.875rem;}
+.eyebrow--c{justify-content:center;}
+.eyebrow__dot{width:8px;height:8px;border-radius:50%;background:var(--b500);flex-shrink:0;}
+.eyebrow__text{
+  font-size:.75rem;font-weight:700;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--b600);
+}
+/* Dark section overrides */
+.bg-dark .eyebrow__text{color:var(--b400);}
+.bg-dark .eyebrow__dot{background:var(--b400);}
+
+/* ─────────────────────────────────────────────────────
+   SERVICE CARDS
+───────────────────────────────────────────────────── */
+/* ─── SERVICES SHOWCASE ────────────────────────────── */
+.svc-showcase{
+  display:grid;
+  grid-template-columns:248px 1fr;
+  gap:2rem;
+  align-items:start;
+  margin-top:clamp(2rem,5vw,3rem);
+}
+.svc-tabs{
+  display:flex;flex-direction:column;gap:.25rem;
+  position:sticky;top:calc(var(--nav-h) + 1.5rem);
+}
+.svc-tab{
+  display:flex;align-items:center;gap:.75rem;
+  padding:.75rem 1rem;
+  border-radius:var(--r-md);
+  text-align:left;width:100%;
+  border:1.5px solid transparent;
+  background:transparent;
+  transition:background 160ms var(--ease),border-color 160ms,color 160ms;
+}
+.svc-tab__num{
+  font-family:var(--fd);font-size:.6875rem;font-weight:700;
+  color:var(--tm);min-width:1.375rem;flex-shrink:0;
+  transition:color 160ms;letter-spacing:.03em;
+}
+.svc-tab__name{
+  font-family:var(--fd);font-size:.875rem;font-weight:600;
+  color:var(--tb);line-height:1.3;transition:color 160ms;
+}
+.svc-tab.active{background:var(--b50);border-color:var(--b200);}
+.svc-tab.active .svc-tab__num{color:var(--b500);}
+.svc-tab.active .svc-tab__name{color:var(--b700);}
+@media(hover:hover){
+  .svc-tab:not(.active):hover{background:var(--soft);border-color:var(--n200);}
+}
+.svc-panel-wrap{position:relative;min-height:400px;}
+.svc-panel{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:clamp(1.5rem,3vw,2.5rem);
+  align-items:center;
+  background:var(--white);
+  border:1.5px solid var(--n200);
+  border-radius:var(--r-2xl);
+  padding:clamp(1.75rem,3.5vw,2.5rem);
+  box-shadow:var(--sh2);
+  position:absolute;width:100%;top:0;
+  opacity:0;pointer-events:none;
+  transform:translateY(14px);
+  transition:opacity 300ms var(--ease),transform 300ms var(--ease);
+}
+.svc-panel.active{
+  opacity:1;pointer-events:auto;
+  transform:translateY(0);
+  position:relative;
+}
+.svc-panel__visual{
+  aspect-ratio:1/1;
+  border-radius:var(--r-xl);
+  overflow:hidden;
+  background:var(--soft);
+  border:1.5px solid var(--n200);
+  display:flex;align-items:center;justify-content:center;
+}
+.svc-panel__visual svg{width:100%;height:100%;display:block;}
+.svc-panel__tag{
+  display:inline-flex;align-items:center;
+  background:var(--b50);color:var(--b600);
+  font-size:.6875rem;font-weight:700;font-family:var(--fd);
+  text-transform:uppercase;letter-spacing:.07em;
+  padding:.3rem .75rem;border-radius:var(--r-pill);
+  margin-bottom:.875rem;
+  border:1px solid var(--b100);
+}
+.svc-panel__content h3{
+  font-family:var(--fd);
+  font-size:clamp(1.2rem,2vw,1.5rem);
+  font-weight:700;color:var(--th);
+  margin-bottom:.75rem;line-height:1.25;
+}
+.svc-panel__content p{
+  color:var(--tb);line-height:1.75;
+  font-size:clamp(.875rem,1.3vw,.9375rem);
+  margin-bottom:1.375rem;
+}
+.svc-bullets{display:flex;flex-direction:column;gap:.5rem;}
+.svc-bullets li{
+  display:flex;align-items:center;gap:.625rem;
+  font-size:.875rem;color:var(--n700);font-weight:500;
+}
+.svc-bullets li::before{
+  content:'';width:6px;height:6px;border-radius:50%;
+  background:var(--g-brand);flex-shrink:0;
+}
+@media(max-width:767px){
+  .svc-showcase{grid-template-columns:1fr;gap:1.25rem;}
+  .svc-tabs{flex-direction:row;flex-wrap:wrap;gap:.375rem;position:static;}
+  .svc-tab{padding:.4375rem .875rem;border-radius:var(--r-pill);}
+  .svc-tab__num{display:none;}
+  .svc-tab__name{font-size:.8rem;}
+  .svc-panel{grid-template-columns:1fr;gap:1.5rem;position:relative;}
+  .svc-panel:not(.active){display:none;}
+  .svc-panel__visual{aspect-ratio:4/3;}
+}
+@media(min-width:768px) and (max-width:1023px){
+  .svc-showcase{grid-template-columns:200px 1fr;}
+  .svc-panel{grid-template-columns:1fr 1fr;}
+}
+
+/* ─────────────────────────────────────────────────────
+   PROCESS
+───────────────────────────────────────────────────── */
+.proc-grid{display:grid;grid-template-columns:1fr;gap:1.125rem;}
+.proc{
+  background:var(--white);border:1.5px solid var(--n200);
+  border-radius:var(--r-xl);padding:clamp(1.375rem,3vw,2rem);
+  position:relative;overflow:hidden;
+  box-shadow:var(--sh1);
+  transition:all 220ms var(--ease);
+}
+@media(hover:hover){
+  .proc:hover{border-color:var(--b200);box-shadow:var(--sh3);transform:translateY(-4px);}
+}
+.proc__num{
+  font-family:var(--fd);
+  font-size:clamp(4rem,8vw,6rem);
+  font-weight:800;line-height:1;
+  color:var(--soft);pointer-events:none;
+  position:absolute;top:.5rem;right:1.25rem;
+  letter-spacing:-.04em;
+}
+.proc__step{
+  display:inline-flex;align-items:center;gap:.375rem;
+  font-size:.75rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--b600);margin-bottom:1rem;
+  background:var(--b50);padding:.25rem .75rem;border-radius:var(--r-pill);
+  border:1px solid var(--b100);
+}
+.proc h3{color:var(--th);margin-bottom:.625rem;}
+.proc p{font-size:clamp(.875rem,1.3vw,.9375rem);line-height:1.75;}
+
+/* ─────────────────────────────────────────────────────
+   STATS (DARK)
+───────────────────────────────────────────────────── */
+.stats-grid{
+  display:grid;grid-template-columns:repeat(2,1fr);
+  position:relative;
+}
+.stat{
+  padding:clamp(2rem,4vw,3.25rem) clamp(1.25rem,3vw,2.5rem);
+  text-align:center;
+  border-right:1px solid var(--dkb);
+  border-bottom:1px solid var(--dkb);
+}
+.stat:nth-child(2n){border-right:none;}
+.stat:nth-child(3),.stat:nth-child(4){border-bottom:none;}
+.stat__val{
+  font-family:var(--fd);
+  font-size:clamp(2.25rem,5vw,3.5rem);
+  font-weight:800;letter-spacing:-.035em;line-height:1;
+  background:linear-gradient(135deg,#818CF8,#C084FC);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+  margin-bottom:.4rem;display:block;
+}
+.stat__lbl{font-size:.875rem;color:var(--dkt2);font-weight:500;}
+
+/* ─────────────────────────────────────────────────────
+   TESTIMONIALS
+───────────────────────────────────────────────────── */
+.testi-grid{display:grid;grid-template-columns:1fr;gap:1.125rem;}
+.testi{
+  background:var(--white);border:1.5px solid var(--n200);
+  border-radius:var(--r-xl);padding:clamp(1.375rem,3vw,2rem);
+  box-shadow:var(--sh1);transition:all 220ms var(--ease);
+}
+@media(hover:hover){
+  .testi:hover{border-color:var(--b200);box-shadow:var(--sh3);transform:translateY(-3px);}
+}
+.testi__stars{
+  display:flex;gap:2px;margin-bottom:1rem;
+  color:#FBBF24;font-size:.875rem;
+}
+.testi__text{
+  font-size:clamp(.875rem,1.3vw,.9875rem);color:var(--tb);
+  line-height:1.78;margin-bottom:1.5rem;font-style:italic;
+}
+.testi__text::before{content:'"';}
+.testi__text::after{content:'"';}
+.testi__author{display:flex;align-items:center;gap:.75rem;}
+.testi__av{
+  width:46px;height:46px;border-radius:50%;flex-shrink:0;
+  object-fit:cover;
+  box-shadow:0 0 0 2px var(--white),0 0 0 4px var(--b200);
+}
+.testi__name{font-weight:600;font-size:.9375rem;color:var(--th);}
+.testi__role{font-size:.8125rem;color:var(--tm);}
+
+/* ─────────────────────────────────────────────────────
+   TEAM
+───────────────────────────────────────────────────── */
+.team-wrap{max-width:900px;margin-inline:auto;}
+.team-grid{display:grid;grid-template-columns:1fr;gap:1.25rem;}
+.member{
+  background:var(--white);border:1.5px solid var(--n200);
+  border-radius:var(--r-xl);padding:clamp(1.5rem,3vw,2.25rem) clamp(1.25rem,3vw,2rem);
+  text-align:center;box-shadow:var(--sh1);transition:all 220ms var(--ease);
+}
+@media(hover:hover){
+  .member:hover{border-color:var(--b200);box-shadow:var(--sh3);transform:translateY(-4px);}
+}
+.member__av{
+  width:80px;height:80px;border-radius:50%;
+  margin:0 auto 1.25rem;
+  object-fit:cover;
+  display:block;
+  position:relative;
+  box-shadow:0 0 0 3px var(--white),0 0 0 5px var(--b200);
+}
+.member__name{font-family:var(--fd);font-size:1.125rem;font-weight:700;color:var(--th);margin-bottom:.2rem;}
+.member__role{font-size:.875rem;color:var(--b600);font-weight:600;margin-bottom:.875rem;}
+.member__bio{font-size:clamp(.8125rem,1.2vw,.875rem);line-height:1.72;}
+
+/* ─────────────────────────────────────────────────────
+   FAQ
+───────────────────────────────────────────────────── */
+.faq-list{max-width:720px;margin-inline:auto;display:flex;flex-direction:column;gap:.5rem;}
+.faq{
+  border:1.5px solid var(--n200);border-radius:var(--r-lg);
+  overflow:hidden;background:var(--white);
+  box-shadow:var(--sh0);transition:border-color 200ms,box-shadow 200ms;
+}
+.faq.open{border-color:var(--b200);box-shadow:var(--sh1);}
+.faq__q{
+  width:100%;text-align:left;
+  display:flex;align-items:center;justify-content:space-between;gap:1rem;
+  padding:clamp(1rem,2vw,1.25rem) clamp(1rem,2.5vw,1.5rem);
+  font-size:clamp(.9rem,1.5vw,1rem);font-weight:600;color:var(--th);
+  min-height:var(--touch);transition:color 180ms;font-family:var(--fb);
+  line-height:1.4;
+}
+@media(hover:hover){.faq__q:hover{color:var(--b600);}}
+.faq__icon{
+  width:26px;height:26px;border-radius:50%;
+  border:1.5px solid var(--n200);
+  display:flex;align-items:center;justify-content:center;
+  flex-shrink:0;color:var(--n500);font-size:1.125rem;line-height:1;font-weight:300;
+  transition:transform 280ms var(--spring),background 200ms,border-color 200ms,color 200ms;
+}
+.faq.open .faq__icon{transform:rotate(45deg);background:var(--b500);border-color:var(--b500);color:#fff;}
+.faq__body{max-height:0;overflow:hidden;transition:max-height 360ms var(--ease);}
+.faq.open .faq__body{max-height:400px;}
+.faq__inner{
+  padding:0 clamp(1rem,2.5vw,1.5rem) clamp(1rem,2vw,1.375rem);
+  font-size:clamp(.875rem,1.3vw,.9375rem);line-height:1.75;color:var(--tb);
+  border-top:1px solid var(--n200);padding-top:1rem;
+}
+
+/* ─────────────────────────────────────────────────────
+   CTA SECTION
+───────────────────────────────────────────────────── */
+.cta-sec{
+  background:var(--g-brand);
+  position:relative;overflow:hidden;
+}
+.cta-sec::before{
+  content:'';position:absolute;inset:0;pointer-events:none;
+  background:
+    radial-gradient(ellipse 50% 60% at 20% 50%,rgba(255,255,255,.08) 0%,transparent 60%),
+    radial-gradient(ellipse 40% 50% at 80% 50%,rgba(0,0,0,.12) 0%,transparent 60%);
+}
+.cta-inner{
+  position:relative;z-index:1;
+  text-align:center;max-width:640px;margin-inline:auto;
+  padding-block:var(--sec);
+}
+.cta-inner .h2{color:#fff;}
+.cta-inner .body-lg{color:rgba(255,255,255,.78);margin-top:.875rem;margin-bottom:clamp(2rem,4vw,3rem);}
+.cta-btns{display:flex;align-items:center;justify-content:center;gap:.875rem;flex-wrap:wrap;}
+.cta-note{font-size:.875rem;color:rgba(255,255,255,.55);margin-top:1.25rem;}
+.cta-note a{color:rgba(255,255,255,.85);text-decoration:underline;text-underline-offset:3px;}
+
+/* ─────────────────────────────────────────────────────
+   FOOTER
+───────────────────────────────────────────────────── */
+footer{
+  background:var(--dk);
+  padding-block:clamp(3rem,7vw,5rem) clamp(1.5rem,3vw,2.5rem);
+  padding-bottom:max(calc(env(safe-area-inset-bottom) + 1.5rem),2.5rem);
+}
+.ft-grid{display:grid;grid-template-columns:1fr;gap:2.5rem;margin-bottom:3rem;}
+.ft-brand .nav__brand{color:var(--dkt1);}
+.ft-brand p{font-size:.9375rem;color:var(--dkt2);line-height:1.72;margin-block:.875rem 1.375rem;max-width:280px;}
+.ft-socials{display:flex;gap:.5rem;}
+.soc{
+  width:var(--touch);height:var(--touch);border-radius:var(--r-sm);
+  border:1px solid var(--dkb);background:rgba(255,255,255,.04);
+  display:flex;align-items:center;justify-content:center;
+  color:var(--dkt2);transition:all 180ms;
+}
+@media(hover:hover){.soc:hover{color:var(--dkt1);background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.14);}}
+.soc:active{opacity:.7;}
+.ft-col h4{
+  font-family:var(--fd);font-size:.75rem;font-weight:700;
+  color:var(--dkt1);letter-spacing:.08em;text-transform:uppercase;
+  margin-bottom:1rem;
+}
+.ft-col ul{display:flex;flex-direction:column;gap:.375rem;}
+.ft-col a{
+  font-size:.9rem;color:var(--dkt2);transition:color 150ms;
+  min-height:var(--touch);display:flex;align-items:center;padding-block:.125rem;
+}
+@media(hover:hover){.ft-col a:hover{color:var(--dkt1);}}
+.ft-bottom{
+  padding-top:1.75rem;border-top:1px solid var(--dkb);
+  display:flex;align-items:center;flex-wrap:wrap;
+  gap:.75rem;flex-direction:column;text-align:center;
+}
+.ft-bottom p{font-size:.875rem;color:var(--dkt3);}
+.ft-legal{display:flex;gap:1.25rem;flex-wrap:wrap;justify-content:center;}
+.ft-legal a{font-size:.875rem;color:var(--dkt3);transition:color 150ms;min-height:var(--touch);display:flex;align-items:center;}
+@media(hover:hover){.ft-legal a:hover{color:var(--dkt1);}}
+
+/* ─────────────────────────────────────────────────────
+   FLOATING CONTACT WIDGET
+───────────────────────────────────────────────────── */
+.fcw{
+  position:fixed;
+  bottom:max(1.25rem,env(safe-area-inset-bottom,1.25rem));
+  right:max(1.25rem,env(safe-area-inset-right,1.25rem));
+  z-index:900;display:flex;flex-direction:column;align-items:flex-end;gap:.875rem;
+}
+.fcw__panel{
+  width:min(360px,calc(100vw - 2.5rem));
+  background:var(--white);
+  border:1.5px solid var(--n200);
+  border-radius:var(--r-2xl);
+  box-shadow:0 8px 32px rgba(13,17,32,.14),0 2px 8px rgba(13,17,32,.06),0 0 0 1px rgba(91,71,245,.08);
+  overflow:hidden;
+  transform-origin:bottom right;
+  transform:scale(.9) translateY(12px);
+  opacity:0;pointer-events:none;
+  transition:transform 320ms var(--spring),opacity 240ms var(--ease);
+}
+.fcw__panel.open{transform:scale(1) translateY(0);opacity:1;pointer-events:all;}
+.fcw__head{
+  display:flex;align-items:center;justify-content:space-between;gap:1rem;
+  padding:1.0625rem 1.25rem;
+  background:var(--g-brand);
+}
+.fcw__head-info{display:flex;align-items:center;gap:.625rem;}
+.fcw__online{width:8px;height:8px;border-radius:50%;background:#4ADE80;flex-shrink:0;box-shadow:0 0 0 2px rgba(74,222,128,.25);}
+.fcw__title{font-family:var(--fd);font-weight:700;font-size:.9375rem;color:#fff;}
+.fcw__sub{font-size:.75rem;color:rgba(255,255,255,.7);margin-top:.1rem;}
+.fcw__close-btn{
+  width:28px;height:28px;border-radius:50%;
+  background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.2);
+  display:flex;align-items:center;justify-content:center;
+  color:rgba(255,255,255,.85);transition:all 150ms;flex-shrink:0;
+}
+@media(hover:hover){.fcw__close-btn:hover{background:rgba(255,255,255,.25);color:#fff;}}
+.fcw__body{padding:1.25rem;}
+.fcw__field{margin-bottom:.875rem;}
+.fcw__field label{display:block;font-size:.8125rem;font-weight:600;color:var(--n700);margin-bottom:.3125rem;}
+.fcw__opt{font-weight:400;color:var(--tm);}
+.fcw__field input,.fcw__field textarea{
+  width:100%;background:var(--soft);border:1.5px solid var(--n200);
+  border-radius:var(--r-md);padding:.6875rem .875rem;
+  color:var(--th);font-size:max(16px,.9375rem);font-family:var(--fb);
+  outline:none;transition:border-color 180ms,box-shadow 180ms,background 180ms;
+  resize:vertical;
+}
+.fcw__field input::placeholder,.fcw__field textarea::placeholder{color:var(--tm);}
+.fcw__field input:focus,.fcw__field textarea:focus{
+  border-color:var(--b500);background:var(--white);
+  box-shadow:0 0 0 3px rgba(91,71,245,.12);
+}
+.fcw__field textarea{min-height:90px;}
+.fcw__send{width:100%;justify-content:center;margin-top:.25rem;}
+.fcw__note{font-size:.75rem;color:var(--tm);text-align:center;margin-top:.75rem;}
+.fcw__note a{color:var(--b600);text-decoration:underline;text-underline-offset:2px;}
+.fcw__spinner{
+  width:15px;height:15px;border:2px solid rgba(255,255,255,.3);
+  border-top-color:#fff;border-radius:50%;animation:spin .6s linear infinite;flex-shrink:0;
+}
+.fcw__errmsg{
+  display:none;font-size:.8125rem;color:#DC2626;
+  background:#FEF2F2;border:1px solid #FECACA;
+  border-radius:var(--r-sm);padding:.5625rem .875rem;margin-bottom:.875rem;
+}
+.fcw__errmsg.show{display:block;}
+.fcw__success{text-align:center;padding:.25rem 0;}
+.fcw__success-ico{
+  width:52px;height:52px;border-radius:50%;margin:0 auto 1rem;
+  background:#F0FDF4;border:1.5px solid #BBF7D0;
+  display:flex;align-items:center;justify-content:center;
+  color:#16A34A;font-size:1.375rem;
+}
+.fcw__success strong{display:block;font-family:var(--fd);font-size:1.0625rem;color:var(--th);margin-bottom:.5rem;}
+.fcw__success p{font-size:.875rem;color:var(--tb);line-height:1.65;margin-bottom:1.25rem;}
+/* FAB */
+.fcw__fab{
+  position:relative;width:56px;height:56px;border-radius:50%;
+  background:var(--g-brand);
+  box-shadow:var(--sh-b),0 4px 20px rgba(91,71,245,.35);
+  display:flex;align-items:center;justify-content:center;
+  transition:transform 250ms var(--spring),box-shadow 200ms;
+  flex-shrink:0;
+}
+@media(hover:hover){
+  .fcw__fab:hover{transform:scale(1.09);box-shadow:var(--sh-b),0 8px 28px rgba(91,71,245,.45);}
+}
+.fcw__fab:active{transform:scale(.94);}
+.fcw__fab-ico{position:absolute;transition:opacity 200ms var(--ease),transform 220ms var(--spring);}
+.fcw__fab-ico.is-msg{}
+.fcw__fab-ico.is-x{opacity:0;transform:rotate(-80deg) scale(.5);}
+.fcw__fab.open .fcw__fab-ico.is-msg{opacity:0;transform:rotate(80deg) scale(.5);}
+.fcw__fab.open .fcw__fab-ico.is-x{opacity:1;transform:rotate(0deg) scale(1);}
+.fcw__ping{position:absolute;top:1px;right:1px;width:13px;height:13px;}
+.fcw__ping::before,.fcw__ping::after{content:'';position:absolute;inset:0;border-radius:50%;background:#4ADE80;}
+.fcw__ping::before{animation:ping 1.8s ease-in-out infinite;opacity:.75;}
+.fcw__fab.open .fcw__ping{display:none;}
+
+/* ─────────────────────────────────────────────────────
+   ANIMATIONS
+───────────────────────────────────────────────────── */
+@keyframes fadeIn{from{opacity:0;}to{opacity:1;}}
+@keyframes spin{to{transform:rotate(360deg);}}
+@keyframes ping{75%,100%{transform:scale(2.2);opacity:0;}}
+@keyframes countUp{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:translateY(0);}}
+
+.fade-up{
+  opacity:0;transform:translateY(24px);
+  transition:opacity 560ms var(--ease),transform 560ms var(--ease);
+}
+.fade-up.in{opacity:1;transform:translateY(0);}
+
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important;}
+  .fade-up{opacity:1;transform:none;}
+}
+
+/* ─────────────────────────────────────────────────────
+   RESPONSIVE — MOBILE-FIRST PROGRESSIVE ENHANCEMENT
+───────────────────────────────────────────────────── */
+/* 480px */
+@media(min-width:480px){
+  .hero__stats{grid-template-columns:repeat(4,auto);}
+  .hero__stat:nth-child(n){border-bottom:none;border-right:1.5px solid var(--n200);}
+  .hero__stat:last-child{border-right:none;}
+  .hero__ctas{flex-direction:row;}
+  .cta-btns{flex-direction:row;}
+}
+/* 600px */
+@media(min-width:600px){
+  .team-grid{grid-template-columns:repeat(2,1fr);}
+  .testi-grid{grid-template-columns:repeat(2,1fr);}
+  .ft-grid{grid-template-columns:repeat(2,1fr);}
+  .ft-bottom{flex-direction:row;text-align:left;justify-content:space-between;}
+}
+/* 768px */
+@media(min-width:768px){
+  .nav__links{display:flex;}
+  .nav__cta{display:block;}
+  .nav__ham{display:none;}
+  .proc-grid{grid-template-columns:repeat(3,1fr);}
+  .stats-grid{grid-template-columns:repeat(4,1fr);}
+  .stat{border-bottom:none!important;}
+  .stat:nth-child(2n){border-right:1px solid var(--dkb);}
+  .stat:nth-child(4n){border-right:none;}
+}
+/* 1024px */
+@media(min-width:1024px){
+  .testi-grid{grid-template-columns:repeat(3,1fr);}
+  .team-grid{grid-template-columns:repeat(3,1fr);}
+  .ft-grid{grid-template-columns:2fr 1fr 1fr 1fr;gap:3rem;}
+}
+/* 1440px */
+@media(min-width:1440px){:root{--pad:clamp(2rem,3.5vw,4rem);}}
+/* 1920px */
+@media(min-width:1920px){:root{--wrap:1440px;}}
+
+/* ─────────────────────────────────────────────────────
+   PRINT
+───────────────────────────────────────────────────── */
+@media print{
+  .nav,.mmenu,.fcw{display:none!important;}
+  body{font-size:11pt;color:#000;background:#fff;}
+  .hero{min-height:auto;padding-top:0;}
+  .hero::before,.hero::after{display:none;}
+  h1,h2,h3{color:#000;}
+  .grad-text{-webkit-text-fill-color:#000;background:none;}
+  .svc-panel,.proc,.testi,.member,.faq{border:1px solid #ccc!important;page-break-inside:avoid;}
+  .bg-dark{background:#fff!important;}
+  .bg-dark *{color:#000!important;}
+  .testi-grid,.team-grid,.proc-grid{grid-template-columns:repeat(2,1fr);}
+  .cta-sec{background:#f5f5f5!important;}
+  .cta-sec *{color:#000!important;}
+  footer{background:#f5f5f5!important;}
+  footer *{color:#333!important;}
+}
+</style>
+</head>
+<body>
+<a href="#main" class="skip-link">Skip to main content</a>
+
+<!-- ══ NAV ══════════════════════════════════════════════ -->
+<nav class="nav" id="nav" role="navigation" aria-label="Main navigation">
+  <div class="nav__inner">
+    <a href="#home" class="nav__brand">
+      <img src="./logo.png" alt="" class="nav__logo" aria-hidden="true" width="32" height="32" loading="eager" decoding="async">
+      Mobotechnology
+    </a>
+    <ul class="nav__links">
+      <li><a href="#services" class="nav__link">Services</a></li>
+      <li><a href="#process" class="nav__link">How It Works</a></li>
+      <li><a href="#team" class="nav__link">Team</a></li>
+      <li><a href="#faq" class="nav__link">FAQ</a></li>
+    </ul>
+    <div class="nav__cta">
+      <a href="mailto:mobotechnology365@gmail.com" class="btn btn-primary">Get Started →</a>
+    </div>
+    <button class="nav__ham" id="ham" aria-label="Open menu" aria-expanded="false" aria-controls="mmenu">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+  </div>
+</nav>
+
+<div class="mmenu" id="mmenu" role="dialog" aria-label="Mobile navigation" aria-modal="true">
+  <button class="mmenu__close" id="mmclose" aria-label="Close menu">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+  </button>
+  <a href="#services"  class="mmenu__link" data-mm>Services</a>
+  <a href="#process"   class="mmenu__link" data-mm>How It Works</a>
+  <a href="#team"      class="mmenu__link" data-mm>Team</a>
+  <a href="#faq"       class="mmenu__link" data-mm>FAQ</a>
+  <a href="mailto:mobotechnology365@gmail.com" class="btn btn-primary btn-lg" style="margin-top:1.5rem;width:100%;justify-content:center">Get Started →</a>
+</div>
+
+<main id="main">
+
+<!-- ══ HERO ═════════════════════════════════════════════ -->
+<section class="hero section" id="home">
+  <div class="wrap">
+    <div class="hero__content">
+      <div class="hero__pill fade-up">
+        <span class="pill"><span class="dot"></span>Casper, WY — Serving clients nationwide</span>
+      </div>
+      <h1 class="display hero__title fade-up">
+        Automate Smarter.<br><span class="grad-text">Grow Faster.</span>
+      </h1>
+      <p class="body-lg hero__sub fade-up">
+        Mobotechnology delivers AI-powered sales and marketing automation that fills your pipeline, nurtures leads, and accelerates revenue — intelligently, at scale, without adding headcount.
+      </p>
+      <div class="hero__ctas fade-up">
+        <a href="mailto:mobotechnology365@gmail.com" class="btn btn-primary btn-lg">Book a Free Strategy Call →</a>
+        <a href="#services" class="btn btn-outline btn-lg">Explore Services</a>
+      </div>
+      <div class="hero__stats fade-up" aria-label="Key metrics">
+        <div class="hero__stat">
+          <div class="hero__stat-val">200+</div>
+          <div class="hero__stat-lbl">Deployments</div>
+        </div>
+        <div class="hero__stat">
+          <div class="hero__stat-val">$120M+</div>
+          <div class="hero__stat-lbl">Revenue generated</div>
+        </div>
+        <div class="hero__stat">
+          <div class="hero__stat-val">98%</div>
+          <div class="hero__stat-lbl">Client retention</div>
+        </div>
+        <div class="hero__stat">
+          <div class="hero__stat-val">3.4×</div>
+          <div class="hero__stat-lbl">Average ROI</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ TRUSTED ═══════════════════════════════════════════ -->
+<div class="trusted bg-soft" style="border-top:1.5px solid var(--n200);border-bottom:1.5px solid var(--n200);">
+  <div class="wrap">
+    <p class="trusted__label">Trusted by forward-thinking teams across industries</p>
+    <div class="trusted__row">
+      <span class="trusted__name">CloudStream Inc.</span>
+      <span class="trusted__name">Nexus Digital Group</span>
+      <span class="trusted__name">Apex SaaS Solutions</span>
+      <span class="trusted__name">PeakVenture Capital</span>
+      <span class="trusted__name">Elevate Health Tech</span>
+      <span class="trusted__name">Meridian Properties</span>
+    </div>
+  </div>
+</div>
+
+<!-- ══ SERVICES ══════════════════════════════════════════ -->
+<section class="section" id="services">
+  <div class="wrap">
+    <div class="sec-head fade-up">
+      <div class="eyebrow"><span class="eyebrow__dot"></span><span class="eyebrow__text">Our Services</span></div>
+      <h2 class="h2">Everything you need to<br><span class="grad-text">dominate your market</span></h2>
+      <p class="body-lg" style="max-width:540px;margin-top:.875rem">From intelligent lead generation to full-funnel revenue automation — systems that turn sales and marketing into a scalable growth engine.</p>
+    </div>
+    <div class="svc-showcase fade-up">
+      <!-- Tab list -->
+      <nav class="svc-tabs" role="tablist" aria-label="Our services">
+        <button class="svc-tab active" role="tab" aria-selected="true" aria-controls="sp-0" data-svc="0"><span class="svc-tab__num">01</span><span class="svc-tab__name">AI Sales Automation</span></button>
+        <button class="svc-tab" role="tab" aria-selected="false" aria-controls="sp-1" data-svc="1"><span class="svc-tab__num">02</span><span class="svc-tab__name">Marketing Automation</span></button>
+        <button class="svc-tab" role="tab" aria-selected="false" aria-controls="sp-2" data-svc="2"><span class="svc-tab__num">03</span><span class="svc-tab__name">Revenue Intelligence</span></button>
+        <button class="svc-tab" role="tab" aria-selected="false" aria-controls="sp-3" data-svc="3"><span class="svc-tab__num">04</span><span class="svc-tab__name">CRM Integration</span></button>
+        <button class="svc-tab" role="tab" aria-selected="false" aria-controls="sp-4" data-svc="4"><span class="svc-tab__num">05</span><span class="svc-tab__name">Conversational AI</span></button>
+        <button class="svc-tab" role="tab" aria-selected="false" aria-controls="sp-5" data-svc="5"><span class="svc-tab__num">06</span><span class="svc-tab__name">Custom AI Workflows</span></button>
+      </nav>
+      <!-- Panels -->
+      <div class="svc-panel-wrap">
+
+        <!-- 01 AI Sales Automation -->
+        <div class="svc-panel active" id="sp-0" role="tabpanel" aria-labelledby="st-0">
+          <div class="svc-panel__visual">
+            <svg viewBox="0 0 320 280" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="s1g1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#5B47F5"/><stop offset="100%" stop-color="#9333EA"/></linearGradient>
+                <linearGradient id="s1g2" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#5B47F5" stop-opacity=".12"/><stop offset="100%" stop-color="#9333EA" stop-opacity=".04"/></linearGradient>
+                <pattern id="s1d" width="18" height="18" patternUnits="userSpaceOnUse"><circle cx="9" cy="9" r="1" fill="rgba(91,71,245,.1)"/></pattern>
+              </defs>
+              <rect width="320" height="280" fill="url(#s1d)"/>
+              <!-- Stage 1 -->
+              <rect x="60" y="24" width="200" height="54" rx="13" fill="url(#s1g2)" stroke="rgba(91,71,245,.22)" stroke-width="1.5"/>
+              <text x="100" y="47" fill="#8A93AD" font-family="Poppins,sans-serif" font-size="9" font-weight="600" letter-spacing=".06em">PROSPECTS</text>
+              <text x="100" y="65" fill="#0D1120" font-family="Poppins,sans-serif" font-size="20" font-weight="700">2,840</text>
+              <rect x="214" y="34" width="36" height="18" rx="6" fill="rgba(91,71,245,.1)"/>
+              <text x="232" y="47" text-anchor="middle" fill="#5B47F5" font-family="Poppins,sans-serif" font-size="8" font-weight="700">+12%</text>
+              <!-- Arrow -->
+              <path d="M148 78 L160 94 L172 78" fill="none" stroke="rgba(91,71,245,.35)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <!-- Stage 2 -->
+              <rect x="82" y="96" width="156" height="54" rx="13" fill="url(#s1g2)" stroke="rgba(91,71,245,.22)" stroke-width="1.5"/>
+              <text x="118" y="119" fill="#8A93AD" font-family="Poppins,sans-serif" font-size="9" font-weight="600" letter-spacing=".06em">QUALIFIED</text>
+              <text x="118" y="137" fill="#0D1120" font-family="Poppins,sans-serif" font-size="20" font-weight="700">847</text>
+              <rect x="196" y="106" width="32" height="18" rx="6" fill="rgba(16,185,129,.1)"/>
+              <text x="212" y="119" text-anchor="middle" fill="#10B981" font-family="Poppins,sans-serif" font-size="8" font-weight="700">34%</text>
+              <!-- Arrow -->
+              <path d="M152 150 L160 166 L168 150" fill="none" stroke="rgba(91,71,245,.35)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <!-- Stage 3 (filled brand) -->
+              <rect x="108" y="168" width="104" height="54" rx="13" fill="url(#s1g1)"/>
+              <text x="160" y="191" text-anchor="middle" fill="rgba(255,255,255,.75)" font-family="Poppins,sans-serif" font-size="9" font-weight="600" letter-spacing=".06em">CLOSED WON</text>
+              <text x="160" y="209" text-anchor="middle" fill="#fff" font-family="Poppins,sans-serif" font-size="20" font-weight="700">312</text>
+              <!-- Score badge -->
+              <rect x="230" y="16" width="72" height="38" rx="10" fill="#fff" stroke="rgba(91,71,245,.18)" stroke-width="1.5"/>
+              <text x="266" y="30" text-anchor="middle" fill="#8A93AD" font-family="Poppins,sans-serif" font-size="8" font-weight="600">AI SCORE</text>
+              <text x="266" y="46" text-anchor="middle" fill="#5B47F5" font-family="Poppins,sans-serif" font-size="14" font-weight="700">94 / 100</text>
+              <!-- Conversion badge -->
+              <rect x="18" y="206" width="74" height="38" rx="10" fill="#fff" stroke="rgba(91,71,245,.18)" stroke-width="1.5"/>
+              <text x="55" y="220" text-anchor="middle" fill="#8A93AD" font-family="Poppins,sans-serif" font-size="8" font-weight="600">CONV RATE</text>
+              <text x="55" y="236" text-anchor="middle" fill="#10B981" font-family="Poppins,sans-serif" font-size="14" font-weight="700">36.8%</text>
+            </svg>
+          </div>
+          <div class="svc-panel__content">
+            <div class="svc-panel__tag">Sales</div>
+            <h3>AI Sales Automation</h3>
+            <p>Intelligent lead scoring, automated outreach sequences, and real-time prospect insights that keep your pipeline full and moving — without manual effort.</p>
+            <ul class="svc-bullets">
+              <li>AI-powered lead scoring &amp; prioritization</li>
+              <li>Automated multi-step outreach sequences</li>
+              <li>Real-time prospect intent signals</li>
+              <li>Pipeline health monitoring &amp; alerts</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- 02 Marketing Automation -->
+        <div class="svc-panel" id="sp-1" role="tabpanel" aria-labelledby="st-1">
+          <div class="svc-panel__visual">
+            <svg viewBox="0 0 320 280" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <radialGradient id="s2hub" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#5B47F5"/><stop offset="100%" stop-color="#9333EA"/></radialGradient>
+                <pattern id="s2d" width="18" height="18" patternUnits="userSpaceOnUse"><circle cx="9" cy="9" r="1" fill="rgba(91,71,245,.1)"/></pattern>
+              </defs>
+              <rect width="320" height="280" fill="url(#s2d)"/>
+              <!-- Spokes -->
+              <line x1="160" y1="140" x2="60" y2="58" stroke="rgba(91,71,245,.2)" stroke-width="1.5" stroke-dasharray="5,4"/>
+              <line x1="160" y1="140" x2="260" y2="58" stroke="rgba(91,71,245,.2)" stroke-width="1.5" stroke-dasharray="5,4"/>
+              <line x1="160" y1="140" x2="52" y2="210" stroke="rgba(91,71,245,.2)" stroke-width="1.5" stroke-dasharray="5,4"/>
+              <line x1="160" y1="140" x2="268" y2="210" stroke="rgba(91,71,245,.2)" stroke-width="1.5" stroke-dasharray="5,4"/>
+              <line x1="160" y1="140" x2="160" y2="24" stroke="rgba(91,71,245,.2)" stroke-width="1.5" stroke-dasharray="5,4"/>
+              <!-- Outer ring -->
+              <circle cx="160" cy="140" r="58" fill="none" stroke="rgba(91,71,245,.08)" stroke-width="1"/>
+              <!-- Hub -->
+              <circle cx="160" cy="140" r="36" fill="url(#s2hub)" opacity=".15"/>
+              <circle cx="160" cy="140" r="24" fill="url(#s2hub)"/>
+              <text x="160" y="136" text-anchor="middle" fill="rgba(255,255,255,.8)" font-family="Poppins,sans-serif" font-size="8" font-weight="600" letter-spacing=".04em">MOBO</text>
+              <text x="160" y="149" text-anchor="middle" fill="#fff" font-family="Poppins,sans-serif" font-size="9" font-weight="700">AI HUB</text>
+              <!-- Channel cards -->
+              <rect x="124" y="10" width="72" height="36" rx="10" fill="#fff" stroke="rgba(91,71,245,.18)" stroke-width="1.5"/>
+              <text x="160" y="24" text-anchor="middle" fill="#5B47F5" font-family="Poppins,sans-serif" font-size="11">✉</text>
+              <text x="160" y="38" text-anchor="middle" fill="#4A5270" font-family="Poppins,sans-serif" font-size="8" font-weight="600">EMAIL</text>
+
+              <rect x="224" y="40" width="72" height="36" rx="10" fill="#fff" stroke="rgba(91,71,245,.18)" stroke-width="1.5"/>
+              <text x="260" y="54" text-anchor="middle" fill="#5B47F5" font-family="Poppins,sans-serif" font-size="11">◈</text>
+              <text x="260" y="68" text-anchor="middle" fill="#4A5270" font-family="Poppins,sans-serif" font-size="8" font-weight="600">SOCIAL</text>
+
+              <rect x="24" y="40" width="72" height="36" rx="10" fill="#fff" stroke="rgba(91,71,245,.18)" stroke-width="1.5"/>
+              <text x="60" y="54" text-anchor="middle" fill="#5B47F5" font-family="Poppins,sans-serif" font-size="11">☏</text>
+              <text x="60" y="68" text-anchor="middle" fill="#4A5270" font-family="Poppins,sans-serif" font-size="8" font-weight="600">SMS</text>
+
+              <rect x="232" y="192" width="72" height="36" rx="10" fill="#fff" stroke="rgba(91,71,245,.18)" stroke-width="1.5"/>
+              <text x="268" y="206" text-anchor="middle" fill="#5B47F5" font-family="Poppins,sans-serif" font-size="11">⊕</text>
+              <text x="268" y="220" text-anchor="middle" fill="#4A5270" font-family="Poppins,sans-serif" font-size="8" font-weight="600">WEB</text>
+
+              <rect x="16" y="192" width="72" height="36" rx="10" fill="#fff" stroke="rgba(91,71,245,.18)" stroke-width="1.5"/>
+              <text x="52" y="206" text-anchor="middle" fill="#5B47F5" font-family="Poppins,sans-serif" font-size="11">◎</text>
+              <text x="52" y="220" text-anchor="middle" fill="#4A5270" font-family="Poppins,sans-serif" font-size="8" font-weight="600">ADS</text>
+              <!-- Stats strip -->
+              <rect x="20" y="248" width="84" height="22" rx="7" fill="rgba(91,71,245,.08)"/>
+              <text x="62" y="263" text-anchor="middle" fill="#5B47F5" font-family="Poppins,sans-serif" font-size="9" font-weight="600">↑ 340% Leads</text>
+              <rect x="118" y="248" width="84" height="22" rx="7" fill="rgba(91,71,245,.08)"/>
+              <text x="160" y="263" text-anchor="middle" fill="#5B47F5" font-family="Poppins,sans-serif" font-size="9" font-weight="600">↓ 45% Cost</text>
+              <rect x="216" y="248" width="84" height="22" rx="7" fill="rgba(91,71,245,.08)"/>
+              <text x="258" y="263" text-anchor="middle" fill="#5B47F5" font-family="Poppins,sans-serif" font-size="9" font-weight="600">3× Revenue</text>
+            </svg>
+          </div>
+          <div class="svc-panel__content">
+            <div class="svc-panel__tag">Marketing</div>
+            <h3>Marketing Automation</h3>
+            <p>Multi-channel campaigns that think. Deliver hyper-personalized experiences to the right audience at precisely the right moment across every touchpoint.</p>
+            <ul class="svc-bullets">
+              <li>Omni-channel campaign orchestration</li>
+              <li>Behavioral segmentation &amp; targeting</li>
+              <li>A/B testing with AI optimization</li>
+              <li>Attribution reporting across channels</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- 03 Revenue Intelligence -->
+        <div class="svc-panel" id="sp-2" role="tabpanel" aria-labelledby="st-2">
+          <div class="svc-panel__visual">
+            <svg viewBox="0 0 320 280" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="s3area" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#5B47F5" stop-opacity=".35"/><stop offset="100%" stop-color="#5B47F5" stop-opacity="0"/></linearGradient>
+                <pattern id="s3d" width="18" height="18" patternUnits="userSpaceOnUse"><circle cx="9" cy="9" r="1" fill="rgba(91,71,245,.1)"/></pattern>
+              </defs>
+              <rect width="320" height="280" fill="url(#s3d)"/>
+              <!-- Card -->
+              <rect x="18" y="18" width="284" height="244" rx="18" fill="#fff" stroke="rgba(91,71,245,.12)" stroke-width="1.5"/>
+              <!-- Header -->
+              <text x="36" y="46" fill="#0D1120" font-family="Poppins,sans-serif" font-size="12" font-weight="700">Revenue Pipeline</text>
+              <rect x="226" y="30" width="62" height="22" rx="7" fill="rgba(16,185,129,.1)" stroke="rgba(16,185,129,.2)" stroke-width="1"/>
+              <text x="257" y="45" text-anchor="middle" fill="#10B981" font-family="Poppins,sans-serif" font-size="9" font-weight="700">↑ 28.4%</text>
+              <!-- Big number -->
+              <text x="36" y="84" fill="#5B47F5" font-family="Poppins,sans-serif" font-size="30" font-weight="700">$4.2M</text>
+              <text x="36" y="100" fill="#8A93AD" font-family="Poppins,sans-serif" font-size="9.5">Projected Q4 Revenue</text>
+              <!-- Grid lines -->
+              <line x1="36" y1="120" x2="284" y2="120" stroke="rgba(13,17,32,.05)" stroke-width="1"/>
+              <line x1="36" y1="148" x2="284" y2="148" stroke="rgba(13,17,32,.05)" stroke-width="1"/>
+              <line x1="36" y1="176" x2="284" y2="176" stroke="rgba(13,17,32,.05)" stroke-width="1"/>
+              <!-- Area chart -->
+              <path d="M36 196 C68 188, 100 182, 128 165 S176 138, 200 124 S244 106, 284 90" fill="none" stroke="#5B47F5" stroke-width="2.5" stroke-linecap="round"/>
+              <path d="M36 196 C68 188, 100 182, 128 165 S176 138, 200 124 S244 106, 284 90 L284 210 L36 210 Z" fill="url(#s3area)"/>
+              <!-- Data points -->
+              <circle cx="128" cy="165" r="4.5" fill="#5B47F5" stroke="#fff" stroke-width="2"/>
+              <circle cx="200" cy="124" r="4.5" fill="#5B47F5" stroke="#fff" stroke-width="2"/>
+              <circle cx="284" cy="90" r="4.5" fill="#5B47F5" stroke="#fff" stroke-width="2"/>
+              <!-- Tooltip -->
+              <rect x="208" y="64" width="78" height="32" rx="8" fill="#0D1120"/>
+              <text x="247" y="77" text-anchor="middle" fill="rgba(255,255,255,.65)" font-family="Poppins,sans-serif" font-size="8" font-weight="500">Nov Revenue</text>
+              <text x="247" y="90" text-anchor="middle" fill="#8B8FF8" font-family="Poppins,sans-serif" font-size="10" font-weight="700">$1.24M</text>
+              <!-- X labels -->
+              <text x="36" y="228" fill="#8A93AD" font-family="Poppins,sans-serif" font-size="8.5">Jul</text>
+              <text x="98" y="228" fill="#8A93AD" font-family="Poppins,sans-serif" font-size="8.5">Aug</text>
+              <text x="160" y="228" fill="#8A93AD" font-family="Poppins,sans-serif" font-size="8.5">Sep</text>
+              <text x="218" y="228" fill="#8A93AD" font-family="Poppins,sans-serif" font-size="8.5">Oct</text>
+              <text x="272" y="228" fill="#8A93AD" font-family="Poppins,sans-serif" font-size="8.5">Nov</text>
+            </svg>
+          </div>
+          <div class="svc-panel__content">
+            <div class="svc-panel__tag">Analytics</div>
+            <h3>Revenue Intelligence</h3>
+            <p>Predictive AI analytics surface pipeline risks and growth opportunities before they're obvious — so your team always acts on what matters most.</p>
+            <ul class="svc-bullets">
+              <li>Predictive pipeline forecasting</li>
+              <li>Win/loss pattern analysis</li>
+              <li>Churn risk detection &amp; early alerts</li>
+              <li>Revenue attribution dashboards</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- 04 CRM Integration -->
+        <div class="svc-panel" id="sp-3" role="tabpanel" aria-labelledby="st-3">
+          <div class="svc-panel__visual">
+            <svg viewBox="0 0 320 280" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="s4hub" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#5B47F5"/><stop offset="100%" stop-color="#9333EA"/></linearGradient>
+                <pattern id="s4d" width="18" height="18" patternUnits="userSpaceOnUse"><circle cx="9" cy="9" r="1" fill="rgba(91,71,245,.1)"/></pattern>
+              </defs>
+              <rect width="320" height="280" fill="url(#s4d)"/>
+              <!-- Connection lines -->
+              <line x1="160" y1="140" x2="60" y2="65"  stroke="rgba(91,71,245,.22)" stroke-width="1.5"/>
+              <line x1="160" y1="140" x2="260" y2="65"  stroke="rgba(91,71,245,.22)" stroke-width="1.5"/>
+              <line x1="160" y1="140" x2="60" y2="215"  stroke="rgba(91,71,245,.22)" stroke-width="1.5"/>
+              <line x1="160" y1="140" x2="260" y2="215" stroke="rgba(91,71,245,.22)" stroke-width="1.5"/>
+              <!-- Flowing dots on lines -->
+              <circle cx="110" cy="102" r="3" fill="#5B47F5" opacity=".5"/>
+              <circle cx="210" cy="102" r="3" fill="#9333EA" opacity=".5"/>
+              <circle cx="110" cy="178" r="3" fill="#5B47F5" opacity=".5"/>
+              <circle cx="210" cy="178" r="3" fill="#9333EA" opacity=".5"/>
+              <!-- Center CRM hub -->
+              <rect x="116" y="108" width="88" height="64" rx="16" fill="url(#s4hub)"/>
+              <text x="160" y="132" text-anchor="middle" fill="rgba(255,255,255,.7)" font-family="Poppins,sans-serif" font-size="8" font-weight="600" letter-spacing=".04em">YOUR CRM</text>
+              <text x="160" y="148" text-anchor="middle" fill="#fff" font-family="Poppins,sans-serif" font-size="12" font-weight="800">AI Core</text>
+              <text x="160" y="162" text-anchor="middle" fill="rgba(255,255,255,.6)" font-family="Poppins,sans-serif" font-size="7.5">Real-time sync</text>
+              <!-- Platform cards -->
+              <rect x="18" y="38" width="84" height="54" rx="12" fill="#fff" stroke="rgba(91,71,245,.15)" stroke-width="1.5"/>
+              <text x="60" y="62" text-anchor="middle" fill="#0D1120" font-family="Poppins,sans-serif" font-size="10" font-weight="700">Salesforce</text>
+              <text x="60" y="78" text-anchor="middle" fill="#10B981" font-family="Poppins,sans-serif" font-size="8" font-weight="600">● Live</text>
+
+              <rect x="218" y="38" width="84" height="54" rx="12" fill="#fff" stroke="rgba(91,71,245,.15)" stroke-width="1.5"/>
+              <text x="260" y="62" text-anchor="middle" fill="#0D1120" font-family="Poppins,sans-serif" font-size="10" font-weight="700">HubSpot</text>
+              <text x="260" y="78" text-anchor="middle" fill="#10B981" font-family="Poppins,sans-serif" font-size="8" font-weight="600">● Live</text>
+
+              <rect x="18" y="188" width="84" height="54" rx="12" fill="#fff" stroke="rgba(91,71,245,.15)" stroke-width="1.5"/>
+              <text x="60" y="212" text-anchor="middle" fill="#0D1120" font-family="Poppins,sans-serif" font-size="10" font-weight="700">Marketo</text>
+              <text x="60" y="228" text-anchor="middle" fill="#10B981" font-family="Poppins,sans-serif" font-size="8" font-weight="600">● Live</text>
+
+              <rect x="218" y="188" width="84" height="54" rx="12" fill="#fff" stroke="rgba(91,71,245,.15)" stroke-width="1.5"/>
+              <text x="260" y="212" text-anchor="middle" fill="#0D1120" font-family="Poppins,sans-serif" font-size="10" font-weight="700">Pipedrive</text>
+              <text x="260" y="228" text-anchor="middle" fill="#10B981" font-family="Poppins,sans-serif" font-size="8" font-weight="600">● Live</text>
+            </svg>
+          </div>
+          <div class="svc-panel__content">
+            <div class="svc-panel__tag">Integration</div>
+            <h3>CRM Integration &amp; Optimization</h3>
+            <p>We connect and supercharge your CRM — Salesforce, HubSpot, or any platform — with AI-driven workflows that eliminate data silos and manual entry for good.</p>
+            <ul class="svc-bullets">
+              <li>50+ pre-built platform connectors</li>
+              <li>Real-time data sync &amp; enrichment</li>
+              <li>Automated data hygiene &amp; deduplication</li>
+              <li>Custom API integrations on request</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- 05 Conversational AI -->
+        <div class="svc-panel" id="sp-4" role="tabpanel" aria-labelledby="st-4">
+          <div class="svc-panel__visual">
+            <svg viewBox="0 0 320 280" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="s5g" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#5B47F5"/><stop offset="100%" stop-color="#9333EA"/></linearGradient>
+                <pattern id="s5d" width="18" height="18" patternUnits="userSpaceOnUse"><circle cx="9" cy="9" r="1" fill="rgba(91,71,245,.1)"/></pattern>
+              </defs>
+              <rect width="320" height="280" fill="url(#s5d)"/>
+              <!-- Phone frame -->
+              <rect x="84" y="14" width="152" height="252" rx="22" fill="#fff" stroke="rgba(91,71,245,.15)" stroke-width="1.5"/>
+              <!-- Chat header -->
+              <rect x="84" y="14" width="152" height="52" rx="22" fill="url(#s5g)"/>
+              <rect x="84" y="38" width="152" height="28" fill="url(#s5g)"/>
+              <circle cx="114" cy="40" r="13" fill="rgba(255,255,255,.2)"/>
+              <text x="114" y="45" text-anchor="middle" fill="#fff" font-family="Poppins,sans-serif" font-size="10" font-weight="800">AI</text>
+              <text x="166" y="35" fill="#fff" font-family="Poppins,sans-serif" font-size="11" font-weight="700">MoboBot</text>
+              <text x="166" y="50" fill="rgba(255,255,255,.7)" font-family="Poppins,sans-serif" font-size="8">● Online · AI-powered</text>
+              <!-- Bot message 1 -->
+              <rect x="96" y="78" width="116" height="40" rx="13" fill="rgba(91,71,245,.07)" stroke="rgba(91,71,245,.12)" stroke-width="1"/>
+              <text x="106" y="94" fill="#4A5270" font-family="Poppins,sans-serif" font-size="8.5">Hi! How can I help</text>
+              <text x="106" y="108" fill="#4A5270" font-family="Poppins,sans-serif" font-size="8.5">you today?</text>
+              <!-- User message -->
+              <rect x="118" y="130" width="110" height="26" rx="13" fill="url(#s5g)"/>
+              <text x="173" y="147" text-anchor="middle" fill="#fff" font-family="Poppins,sans-serif" font-size="8.5">Book a product demo</text>
+              <!-- Bot message 2 -->
+              <rect x="96" y="168" width="124" height="52" rx="13" fill="rgba(91,71,245,.07)" stroke="rgba(91,71,245,.12)" stroke-width="1"/>
+              <text x="106" y="183" fill="#4A5270" font-family="Poppins,sans-serif" font-size="8.5">Done! Booked for</text>
+              <text x="106" y="196" fill="#4A5270" font-family="Poppins,sans-serif" font-size="8.5">Thursday 2PM. A</text>
+              <text x="106" y="209" fill="#5B47F5" font-family="Poppins,sans-serif" font-size="8.5" font-weight="600">calendar invite sent ✓</text>
+              <!-- Typing -->
+              <rect x="96" y="232" width="50" height="22" rx="11" fill="rgba(91,71,245,.07)"/>
+              <circle cx="110" cy="243" r="3" fill="#8A93AD"/>
+              <circle cx="121" cy="243" r="3" fill="#8A93AD" opacity=".55"/>
+              <circle cx="132" cy="243" r="3" fill="#8A93AD" opacity=".25"/>
+            </svg>
+          </div>
+          <div class="svc-panel__content">
+            <div class="svc-panel__tag">Conversational AI</div>
+            <h3>Conversational AI &amp; Chatbots</h3>
+            <p>Intelligent chatbots that qualify leads, schedule demos, and nurture prospects around the clock — without adding headcount to your team.</p>
+            <ul class="svc-bullets">
+              <li>24/7 lead qualification &amp; routing</li>
+              <li>Automated demo booking &amp; scheduling</li>
+              <li>Natural language understanding (NLU)</li>
+              <li>Seamless handoff to human agents</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- 06 Custom AI Workflows -->
+        <div class="svc-panel" id="sp-5" role="tabpanel" aria-labelledby="st-5">
+          <div class="svc-panel__visual">
+            <svg viewBox="0 0 320 280" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="s6g" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#5B47F5"/><stop offset="100%" stop-color="#9333EA"/></linearGradient>
+                <marker id="s6arr" markerWidth="7" markerHeight="7" refX="3.5" refY="3.5" orient="auto"><path d="M0,1 L6,3.5 L0,6 Z" fill="rgba(91,71,245,.45)"/></marker>
+                <pattern id="s6d" width="18" height="18" patternUnits="userSpaceOnUse"><circle cx="9" cy="9" r="1" fill="rgba(91,71,245,.1)"/></pattern>
+              </defs>
+              <rect width="320" height="280" fill="url(#s6d)"/>
+              <!-- Trigger -->
+              <rect x="100" y="16" width="120" height="44" rx="13" fill="url(#s6g)"/>
+              <text x="160" y="35" text-anchor="middle" fill="rgba(255,255,255,.7)" font-family="Poppins,sans-serif" font-size="8" font-weight="600" letter-spacing=".05em">TRIGGER</text>
+              <text x="160" y="50" text-anchor="middle" fill="#fff" font-family="Poppins,sans-serif" font-size="9.5" font-weight="700">New Lead Detected</text>
+              <!-- Arrow down -->
+              <line x1="160" y1="60" x2="160" y2="80" stroke="rgba(91,71,245,.4)" stroke-width="1.5" marker-end="url(#s6arr)"/>
+              <!-- Diamond decision -->
+              <polygon points="160,82 204,114 160,146 116,114" fill="rgba(91,71,245,.07)" stroke="rgba(91,71,245,.28)" stroke-width="1.5"/>
+              <text x="160" y="109" text-anchor="middle" fill="#5B47F5" font-family="Poppins,sans-serif" font-size="8.5" font-weight="700">AI SCORE</text>
+              <text x="160" y="123" text-anchor="middle" fill="#5B47F5" font-family="Poppins,sans-serif" font-size="8">≥ 80?</text>
+              <!-- Yes branch right -->
+              <line x1="204" y1="114" x2="240" y2="114" stroke="rgba(91,71,245,.4)" stroke-width="1.5" marker-end="url(#s6arr)"/>
+              <text x="218" y="108" fill="#10B981" font-family="Poppins,sans-serif" font-size="8" font-weight="600">YES</text>
+              <rect x="242" y="90" width="60" height="48" rx="11" fill="rgba(16,185,129,.08)" stroke="rgba(16,185,129,.28)" stroke-width="1.5"/>
+              <text x="272" y="111" text-anchor="middle" fill="#10B981" font-family="Poppins,sans-serif" font-size="8.5" font-weight="700">FAST</text>
+              <text x="272" y="126" text-anchor="middle" fill="#10B981" font-family="Poppins,sans-serif" font-size="8.5" font-weight="700">TRACK</text>
+              <!-- No branch left -->
+              <line x1="116" y1="114" x2="80" y2="114" stroke="rgba(91,71,245,.4)" stroke-width="1.5" marker-end="url(#s6arr)"/>
+              <text x="92" y="108" fill="#F59E0B" font-family="Poppins,sans-serif" font-size="8" font-weight="600">NO</text>
+              <rect x="18" y="90" width="60" height="48" rx="11" fill="rgba(245,158,11,.08)" stroke="rgba(245,158,11,.28)" stroke-width="1.5"/>
+              <text x="48" y="111" text-anchor="middle" fill="#F59E0B" font-family="Poppins,sans-serif" font-size="8.5" font-weight="700">NURTURE</text>
+              <text x="48" y="126" text-anchor="middle" fill="#F59E0B" font-family="Poppins,sans-serif" font-size="8.5" font-weight="700">SEQ</text>
+              <!-- Arrow down -->
+              <line x1="160" y1="146" x2="160" y2="166" stroke="rgba(91,71,245,.4)" stroke-width="1.5" marker-end="url(#s6arr)"/>
+              <!-- Action -->
+              <rect x="90" y="168" width="140" height="44" rx="13" fill="#fff" stroke="rgba(91,71,245,.2)" stroke-width="1.5"/>
+              <text x="160" y="186" text-anchor="middle" fill="#8A93AD" font-family="Poppins,sans-serif" font-size="8" font-weight="600" letter-spacing=".04em">ACTION</text>
+              <text x="160" y="201" text-anchor="middle" fill="#0D1120" font-family="Poppins,sans-serif" font-size="9.5" font-weight="700">Auto-send Outreach</text>
+              <!-- Arrow down -->
+              <line x1="160" y1="212" x2="160" y2="230" stroke="rgba(91,71,245,.4)" stroke-width="1.5" marker-end="url(#s6arr)"/>
+              <!-- Result -->
+              <rect x="106" y="232" width="108" height="34" rx="11" fill="rgba(91,71,245,.07)" stroke="rgba(91,71,245,.2)" stroke-width="1.5"/>
+              <text x="160" y="253" text-anchor="middle" fill="#5B47F5" font-family="Poppins,sans-serif" font-size="9.5" font-weight="700">Log &amp; Optimize ✓</text>
+            </svg>
+          </div>
+          <div class="svc-panel__content">
+            <div class="svc-panel__tag">Custom Build</div>
+            <h3>Custom AI Workflows</h3>
+            <p>Bespoke automation systems built around your exact sales process, tech stack, and growth objectives. Nothing off-the-shelf. Everything intentional.</p>
+            <ul class="svc-bullets">
+              <li>Fully tailored to your sales process</li>
+              <li>Integrates with any existing stack</li>
+              <li>Continuous learning &amp; optimization</li>
+              <li>Dedicated engineering team support</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ PROCESS ════════════════════════════════════════════ -->
+<section class="section bg-soft" id="process" style="border-top:1.5px solid var(--n200);border-bottom:1.5px solid var(--n200);">
+  <div class="wrap">
+    <div class="sec-head sec-head--c fade-up">
+      <div class="eyebrow eyebrow--c"><span class="eyebrow__dot"></span><span class="eyebrow__text">How It Works</span><span class="eyebrow__dot"></span></div>
+      <h2 class="h2">Strategy to scale<br><span class="grad-text">in three clear steps</span></h2>
+      <p class="body-lg" style="max-width:480px;margin-top:.875rem">Our proven process gets your AI automation live fast — zero disruption, full transparency at every stage.</p>
+    </div>
+    <div class="proc-grid">
+      <article class="proc fade-up">
+        <div class="proc__num" aria-hidden="true">01</div>
+        <div class="proc__step">Step 01</div>
+        <h3 class="h3">Discovery & Strategy</h3>
+        <p>We audit your stack, map pipeline bottlenecks, and build a custom automation blueprint aligned with your revenue goals. No templates — only bespoke strategy.</p>
+      </article>
+      <article class="proc fade-up">
+        <div class="proc__num" aria-hidden="true">02</div>
+        <div class="proc__step">Step 02</div>
+        <h3 class="h3">Build & Integrate</h3>
+        <p>Our team deploys and configures your AI system — fully integrated with your CRM, marketing stack, and communication channels. We handle every technical detail.</p>
+      </article>
+      <article class="proc fade-up">
+        <div class="proc__num" aria-hidden="true">03</div>
+        <div class="proc__step">Step 03</div>
+        <h3 class="h3">Launch & Optimize</h3>
+        <p>Go live with complete support. We monitor performance, run experiments, and continuously optimize every automation — improving results month after month.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ══ STATS ══════════════════════════════════════════════ -->
+<section class="bg-dark" id="results" aria-labelledby="stats-ttl">
+  <h2 id="stats-ttl" class="sr-only">Our results by the numbers</h2>
+  <div class="wrap">
+    <div class="stats-grid">
+      <div class="stat fade-up">
+        <span class="stat__val" data-count="200" data-suffix="+">200+</span>
+        <span class="stat__lbl">Successful Deployments</span>
+      </div>
+      <div class="stat fade-up">
+        <span class="stat__val" data-prefix="$" data-count="120" data-suffix="M+">$120M+</span>
+        <span class="stat__lbl">Revenue Generated for Clients</span>
+      </div>
+      <div class="stat fade-up">
+        <span class="stat__val" data-count="98" data-suffix="%">98%</span>
+        <span class="stat__lbl">Client Retention Rate</span>
+      </div>
+      <div class="stat fade-up">
+        <span class="stat__val" data-count="3.4" data-suffix="×">3.4×</span>
+        <span class="stat__lbl">Average Return on Investment</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ TESTIMONIALS ═══════════════════════════════════════ -->
+<section class="section" id="testimonials">
+  <div class="wrap">
+    <div class="sec-head sec-head--c fade-up">
+      <div class="eyebrow eyebrow--c"><span class="eyebrow__dot"></span><span class="eyebrow__text">Client Stories</span><span class="eyebrow__dot"></span></div>
+      <h2 class="h2">Trusted by teams who<br><span class="grad-text">demand real results</span></h2>
+    </div>
+    <div class="testi-grid">
+      <article class="testi fade-up">
+        <div class="testi__stars">★★★★★</div>
+        <p class="testi__text">Mobotechnology transformed our outbound strategy. We saw a 340% increase in qualified leads within 90 days. Their AI approach isn't just automation — it's intelligent growth that compounds over time.</p>
+        <div class="testi__author">
+          <img class="testi__av" src="https://i.pravatar.cc/80?img=49" alt="Sarah Mitchell" width="46" height="46" loading="lazy" decoding="async">
+          <div><div class="testi__name">Sarah Mitchell</div><div class="testi__role">VP of Sales, CloudStream Inc.</div></div>
+        </div>
+      </article>
+      <article class="testi fade-up">
+        <div class="testi__stars">★★★★★</div>
+        <p class="testi__text">The automation system they built runs flawlessly. Campaign costs dropped 45% while conversions tripled. These are world-class operators who understand both technology and business.</p>
+        <div class="testi__author">
+          <img class="testi__av" src="https://i.pravatar.cc/80?img=12" alt="James Okafor" width="46" height="46" loading="lazy" decoding="async">
+          <div><div class="testi__name">James Okafor</div><div class="testi__role">CMO, Nexus Digital Group</div></div>
+        </div>
+      </article>
+      <article class="testi fade-up">
+        <div class="testi__stars">★★★★★</div>
+        <p class="testi__text">From discovery call to full deployment in under 6 weeks. Sharp, responsive, deeply invested in your success. The best technology investment our company has made in five years.</p>
+        <div class="testi__author">
+          <img class="testi__av" src="https://i.pravatar.cc/80?img=44" alt="Lisa Park" width="46" height="46" loading="lazy" decoding="async">
+          <div><div class="testi__name">Lisa Park</div><div class="testi__role">CEO, Apex SaaS Solutions</div></div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ══ TEAM ═══════════════════════════════════════════════ -->
+<section class="section bg-soft" id="team" style="border-top:1.5px solid var(--n200);border-bottom:1.5px solid var(--n200);">
+  <div class="wrap">
+    <div class="sec-head sec-head--c fade-up">
+      <div class="eyebrow eyebrow--c"><span class="eyebrow__dot"></span><span class="eyebrow__text">Leadership</span><span class="eyebrow__dot"></span></div>
+      <h2 class="h2">20+ professionals,<br><span class="grad-text">one shared mission</span></h2>
+      <p class="body-lg" style="max-width:480px;margin-top:.875rem">Experienced operators who have built and scaled revenue systems across industries — deep technical expertise with real commercial instinct.</p>
+    </div>
+    <div class="team-wrap">
+      <div class="team-grid">
+        <article class="member fade-up">
+          <img class="member__av" src="https://i.pravatar.cc/100?img=59" alt="Bipin Pandey" width="80" height="80" loading="lazy" decoding="async">
+          <div class="member__name">Bipin Pandey</div>
+          <div class="member__role">Founder & CEO</div>
+          <p class="member__bio">Visionary technologist with deep expertise in AI systems and revenue automation. Founded Mobotechnology to bridge cutting-edge AI and real-world growth outcomes for ambitious businesses.</p>
+        </article>
+        <article class="member fade-up">
+          <img class="member__av" src="https://i.pravatar.cc/100?img=68" alt="Raman Giri" width="80" height="80" loading="lazy" decoding="async">
+          <div class="member__name">Raman Giri</div>
+          <div class="member__role">Co-Founder</div>
+          <p class="member__bio">Full-stack architect and automation strategist. Raman leads product development with a rare combination of engineering precision and marketing intelligence that drives measurable impact.</p>
+        </article>
+        <article class="member fade-up">
+          <img class="member__av" src="https://i.pravatar.cc/100?img=47" alt="Kripa Sarma" width="80" height="80" loading="lazy" decoding="async">
+          <div class="member__name">Kripa Sarma</div>
+          <div class="member__role">Chief Operating Officer</div>
+          <p class="member__bio">Operations leader with a track record of scaling service organizations with precision. Ensures every engagement is delivered on time, on budget, and exceeds expectations — every time.</p>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FAQ ════════════════════════════════════════════════ -->
+<section class="section" id="faq">
+  <div class="wrap">
+    <div class="sec-head sec-head--c fade-up">
+      <div class="eyebrow eyebrow--c"><span class="eyebrow__dot"></span><span class="eyebrow__text">FAQ</span><span class="eyebrow__dot"></span></div>
+      <h2 class="h2">Answers to your<br><span class="grad-text">most common questions</span></h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq fade-up"><button class="faq__q" aria-expanded="false">What industries do you work with?<span class="faq__icon" aria-hidden="true">+</span></button><div class="faq__body"><div class="faq__inner">We partner with B2B SaaS, e-commerce, financial services, healthcare tech, real estate, and professional services firms. If your business has a sales or marketing function, we can drive measurable growth. We've deployed systems across 12+ distinct verticals.</div></div></div>
+      <div class="faq fade-up"><button class="faq__q" aria-expanded="false">How long does a typical implementation take?<span class="faq__icon" aria-hidden="true">+</span></button><div class="faq__body"><div class="faq__inner">Most engagements go live in 4–8 weeks from signed contract. Timeline depends on your stack complexity and scope. Our fastest deployment was 18 days. We give you a precise date during discovery — and we hold to it.</div></div></div>
+      <div class="faq fade-up"><button class="faq__q" aria-expanded="false">Will you integrate with our existing CRM and tools?<span class="faq__icon" aria-hidden="true">+</span></button><div class="faq__body"><div class="faq__inner">Yes — seamless integration is a core strength. We have pre-built connectors for Salesforce, HubSpot, Pipedrive, Zoho, Marketo, ActiveCampaign, and 50+ platforms. For custom systems, our engineers build integrations from scratch.</div></div></div>
+      <div class="faq fade-up"><button class="faq__q" aria-expanded="false">What makes your AI approach different from standard automation tools?<span class="faq__icon" aria-hidden="true">+</span></button><div class="faq__body"><div class="faq__inner">Standard tools execute fixed rules. Our systems learn, adapt, and improve. We build AI models trained on your specific data — your customers, pipeline patterns, conversion triggers. Automation that gets smarter every day.</div></div></div>
+      <div class="faq fade-up"><button class="faq__q" aria-expanded="false">Do you provide ongoing support after launch?<span class="faq__icon" aria-hidden="true">+</span></button><div class="faq__body"><div class="faq__inner">All clients receive dedicated post-launch support: proactive monitoring, monthly reviews, and continuous optimization. Flexible retainer plans for ongoing development. Our 98% retention rate reflects the value of long-term partnership.</div></div></div>
+      <div class="faq fade-up"><button class="faq__q" aria-expanded="false">How do you measure and report ROI?<span class="faq__icon" aria-hidden="true">+</span></button><div class="faq__body"><div class="faq__inner">We establish clear baselines before deployment and track agreed KPIs throughout — pipeline volume, conversion rates, cost per acquisition, and revenue attributed. Monthly reports with transparent attribution. If something isn't performing, we fix it.</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ CTA ════════════════════════════════════════════════ -->
+<section class="cta-sec" id="contact">
+  <div class="wrap">
+    <div class="cta-inner fade-up">
+      <div style="margin-bottom:1.5rem">
+        <span class="pill" style="background:rgba(255,255,255,.15);color:#fff;border-color:rgba(255,255,255,.2)"><span class="dot" style="background:#fff"></span>Let's talk growth</span>
+      </div>
+      <h2 class="h2">Ready to transform<br>your revenue engine?</h2>
+      <p class="body-lg">Book a free 30-minute strategy call. We'll audit your process, identify your biggest automation opportunities, and show you exactly how we'd scale your results — no commitment required.</p>
+      <div class="cta-btns">
+        <a href="mailto:mobotechnology365@gmail.com" class="btn btn-white btn-lg">Book a Free Strategy Call →</a>
+        <a href="mailto:mobotechnology365@gmail.com" class="btn btn-lg" style="background:rgba(255,255,255,.1);color:#fff;border-color:rgba(255,255,255,.2)">Send Us a Message</a>
+      </div>
+      <p class="cta-note">Or email us directly at <a href="mailto:mobotechnology365@gmail.com">mobotechnology365@gmail.com</a></p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ══ FOOTER ═════════════════════════════════════════════ -->
+<footer>
+  <div class="wrap">
+    <div class="ft-grid">
+      <div class="ft-brand">
+        <a href="#home" class="nav__brand" style="color:var(--dkt1)">
+          <img src="./logo.png" alt="" class="nav__logo" aria-hidden="true" width="32" height="32" loading="lazy" decoding="async">
+          Mobotechnology
+        </a>
+        <p>AI-powered sales and marketing automation for forward-thinking businesses. Headquartered in Casper, Wyoming — serving clients nationwide.</p>
+        <div class="ft-socials">
+          <a href="#" class="soc" aria-label="LinkedIn"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+          <a href="#" class="soc" aria-label="Twitter / X"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+          <a href="#" class="soc" aria-label="GitHub"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg></a>
+          <a href="mailto:mobotechnology365@gmail.com" class="soc" aria-label="Email"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></a>
+        </div>
+      </div>
+      <div class="ft-col"><h4>Services</h4><ul><li><a href="#services">AI Sales Automation</a></li><li><a href="#services">Marketing Automation</a></li><li><a href="#services">Revenue Intelligence</a></li><li><a href="#services">CRM Integration</a></li><li><a href="#services">Conversational AI</a></li><li><a href="#services">Custom Workflows</a></li></ul></div>
+      <div class="ft-col"><h4>Company</h4><ul><li><a href="#team">About Us</a></li><li><a href="#team">Leadership</a></li><li><a href="#process">How It Works</a></li><li><a href="#testimonials">Case Studies</a></li><li><a href="#faq">FAQ</a></li></ul></div>
+      <div class="ft-col"><h4>Contact</h4><ul><li><a href="mailto:mobotechnology365@gmail.com">mobotechnology365@gmail.com</a></li><li><a href="#contact">Casper, Wyoming, US</a></li><li><a href="#contact">Book a Strategy Call</a></li></ul></div>
+    </div>
+    <div class="ft-bottom">
+      <p>© 2025 Mobotechnology LLC. All rights reserved.</p>
+      <div class="ft-legal"><a href="#">Privacy Policy</a><a href="#">Terms of Service</a></div>
+    </div>
+  </div>
+</footer>
+
+<!-- ══ FLOATING CONTACT WIDGET ════════════════════════════ -->
+<div class="fcw" id="fcw">
+  <div class="fcw__panel" id="fcwPanel" role="dialog" aria-label="Contact us" aria-modal="false">
+    <div class="fcw__head">
+      <div class="fcw__head-info">
+        <div class="fcw__online" aria-hidden="true"></div>
+        <div><div class="fcw__title">Send us a message</div><div class="fcw__sub">We reply within a few hours</div></div>
+      </div>
+      <button class="fcw__close-btn" id="fcwClose" aria-label="Close">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+    <div class="fcw__body">
+      <div class="fcw__errmsg" id="fcwErr" role="alert"></div>
+      <form id="fcwForm" novalidate>
+        <div class="fcw__field">
+          <label for="fcwName">Name <span class="fcw__opt">(optional)</span></label>
+          <input type="text" id="fcwName" placeholder="e.g. Sarah Miller" autocomplete="name" maxlength="80">
+        </div>
+        <div class="fcw__field">
+          <label for="fcwEmail">Email <span class="fcw__opt">(optional)</span></label>
+          <input type="email" id="fcwEmail" placeholder="you@company.com" autocomplete="email" maxlength="120" inputmode="email">
+        </div>
+        <div class="fcw__field">
+          <label for="fcwMsg">Message <span class="fcw__opt">*</span></label>
+          <textarea id="fcwMsg" placeholder="Tell us about your project or ask a question…" rows="4" required maxlength="1000" aria-required="true"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary fcw__send" id="fcwBtn">
+          <span id="fcwBtnTxt">Send Message →</span>
+          <span class="fcw__spinner" id="fcwSpin" style="display:none" aria-hidden="true"></span>
+        </button>
+        <p class="fcw__note">Or email <a href="mailto:mobotechnology365@gmail.com">mobotechnology365@gmail.com</a></p>
+      </form>
+      <div class="fcw__success" id="fcwOk" style="display:none" role="status">
+        <div class="fcw__success-ico" aria-hidden="true">✓</div>
+        <strong>Message sent!</strong>
+        <p>We'll get back to you shortly at mobotechnology365@gmail.com.</p>
+        <button class="btn btn-outline" id="fcwReset" style="width:100%;justify-content:center;margin-top:.5rem">Send another</button>
+      </div>
+    </div>
+  </div>
+  <button class="fcw__fab" id="fcwFab" aria-label="Contact us" aria-expanded="false">
+    <svg class="fcw__fab-ico is-msg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+    <svg class="fcw__fab-ico is-x" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    <span class="fcw__ping" aria-hidden="true"></span>
+  </button>
+</div>
+
+<script>
+/* ── Navbar ──────────────────────────────────────── */
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => nav.classList.toggle('scrolled', scrollY > 20), { passive: true });
+
+/* ── Mobile menu ─────────────────────────────────── */
+const ham = document.getElementById('ham');
+const mm  = document.getElementById('mmenu');
+const mmc = document.getElementById('mmclose');
+const openMM  = () => { mm.classList.add('open'); document.body.style.overflow='hidden'; ham.setAttribute('aria-expanded','true'); };
+const closeMM = () => { mm.classList.remove('open'); document.body.style.overflow=''; ham.setAttribute('aria-expanded','false'); };
+ham.addEventListener('click', openMM);
+mmc.addEventListener('click', closeMM);
+mm.addEventListener('click', e => e.target===mm && closeMM());
+mm.querySelectorAll('[data-mm]').forEach(l => l.addEventListener('click', closeMM));
+
+/* ── Services tabs ───────────────────────────────── */
+const svcTabs   = document.querySelectorAll('.svc-tab');
+const svcPanels = document.querySelectorAll('.svc-panel');
+svcTabs.forEach(tab => {
+  tab.addEventListener('click', () => {
+    const idx = +tab.dataset.svc;
+    svcTabs.forEach((t, i) => { t.classList.toggle('active', i===idx); t.setAttribute('aria-selected', i===idx); });
+    svcPanels.forEach((p, i) => p.classList.toggle('active', i===idx));
+  });
+});
+
+/* ── FAQ accordion ───────────────────────────────── */
+document.querySelectorAll('.faq__q').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item   = btn.closest('.faq');
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq.open').forEach(el => { el.classList.remove('open'); el.querySelector('.faq__q').setAttribute('aria-expanded','false'); });
+    if (!isOpen) { item.classList.add('open'); btn.setAttribute('aria-expanded','true'); }
+  });
+});
+
+/* ── Scroll-reveal ───────────────────────────────── */
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (!e.isIntersecting) return;
+    const sibs = [...e.target.parentElement.querySelectorAll('.fade-up:not(.in)')];
+    const idx  = sibs.indexOf(e.target);
+    setTimeout(() => e.target.classList.add('in'), Math.min(idx * 70, 320));
+    io.unobserve(e.target);
+  });
+}, { rootMargin:'0px 0px -48px 0px', threshold:0.07 });
+document.querySelectorAll('.fade-up').forEach(el => io.observe(el));
+
+/* ── Count-up animation for stats ───────────────── */
+const counterIO = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (!e.isIntersecting) return;
+    const el  = e.target;
+    const end = parseFloat(el.dataset.count);
+    const sfx = el.dataset.suffix || '';
+    const pfx = el.dataset.prefix || '';
+    const dur = 1600;
+    const isFloat = String(end).includes('.');
+    const start = performance.now();
+    const run = now => {
+      const t  = Math.min((now - start) / dur, 1);
+      const e2 = 1 - Math.pow(1 - t, 3); // ease-out cubic
+      const v  = end * e2;
+      el.textContent = pfx + (isFloat ? v.toFixed(1) : Math.floor(v)) + sfx;
+      if (t < 1) requestAnimationFrame(run);
+    };
+    requestAnimationFrame(run);
+    counterIO.unobserve(el);
+  });
+}, { threshold: 0.5 });
+document.querySelectorAll('.stat__val[data-count]').forEach(el => counterIO.observe(el));
+
+/* ── Smooth anchor scroll ────────────────────────── */
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const id = a.getAttribute('href');
+    if (id === '#') return;
+    const t = document.querySelector(id);
+    if (t) { e.preventDefault(); t.scrollIntoView({ behavior:'smooth', block:'start' }); }
+  });
+});
+
+/* ── ESC key ─────────────────────────────────────── */
+document.addEventListener('keydown', e => {
+  if (e.key !== 'Escape') return;
+  if (mm.classList.contains('open')) closeMM();
+  if (fcwOpen) closeFcw();
+});
+
+/* ═══════════════════════════════════════════════════
+   FLOATING CONTACT WIDGET
+═══════════════════════════════════════════════════ */
+const fcwFab  = document.getElementById('fcwFab');
+const fcwPanel= document.getElementById('fcwPanel');
+const fcwClose= document.getElementById('fcwClose');
+const fcwForm  = document.getElementById('fcwForm');
+const fcwName  = document.getElementById('fcwName');
+const fcwEmail = document.getElementById('fcwEmail');
+const fcwMsg   = document.getElementById('fcwMsg');
+const fcwBtn  = document.getElementById('fcwBtn');
+const fcwTxt  = document.getElementById('fcwBtnTxt');
+const fcwSpin = document.getElementById('fcwSpin');
+const fcwOk   = document.getElementById('fcwOk');
+const fcwErr  = document.getElementById('fcwErr');
+const fcwReset= document.getElementById('fcwReset');
+let fcwOpen   = false;
+
+function openFcw() {
+  fcwOpen = true;
+  fcwPanel.removeAttribute('hidden');
+  requestAnimationFrame(() => requestAnimationFrame(() => fcwPanel.classList.add('open')));
+  fcwFab.classList.add('open');
+  fcwFab.setAttribute('aria-expanded','true');
+  setTimeout(() => fcwName.focus(), 340);
+}
+function closeFcw() {
+  fcwOpen = false;
+  fcwPanel.classList.remove('open');
+  fcwFab.classList.remove('open');
+  fcwFab.setAttribute('aria-expanded','false');
+  setTimeout(() => { if (!fcwOpen) fcwPanel.setAttribute('hidden',''); }, 300);
+}
+
+fcwFab.addEventListener('click', () => fcwOpen ? closeFcw() : openFcw());
+fcwClose.addEventListener('click', closeFcw);
+
+fcwForm.addEventListener('submit', async e => {
+  e.preventDefault();
+  const name  = fcwName.value.trim();
+  const email = fcwEmail.value.trim();
+  const msg   = fcwMsg.value.trim();
+  if (!msg) { fcwMsg.focus(); setErr('Please write a message before sending.'); return; }
+  if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    fcwEmail.focus(); setErr('Please enter a valid email address.'); return;
+  }
+  clearErr(); setLoading(true);
+
+  const who  = [name && `Name: ${name}`, email && `Email: ${email}`].filter(Boolean).join('\n');
+  const body = who ? `${who}\n\n${msg}` : msg;
+  try {
+    const url = 'https://ntfy.sh/mobotechnology_alert'
+              + '?title=New+Inquiry+%E2%80%94+Mobotechnology'
+              + '&priority=high'
+              + '&tags=wave%2Cenvelope';
+    const res = await fetch(url, {
+      method: 'POST',
+      headers: { 'Content-Type': 'text/plain' },
+      body,
+    });
+    if (!res.ok) throw new Error(res.status);
+    fcwForm.style.display = 'none';
+    fcwOk.style.display   = 'block';
+  } catch {
+    setErr('Could not send. Please email mobotechnology365@gmail.com directly.');
+  } finally {
+    setLoading(false);
+  }
+});
+
+fcwReset.addEventListener('click', () => {
+  fcwOk.style.display   = 'none';
+  fcwForm.style.display = '';
+  fcwName.value = ''; fcwEmail.value = ''; fcwMsg.value = '';
+  clearErr(); fcwName.focus();
+});
+
+function setLoading(on) { fcwBtn.disabled=on; fcwTxt.textContent=on?'Sending…':'Send Message →'; fcwSpin.style.display=on?'inline-block':'none'; }
+function setErr(m)  { fcwErr.textContent=m; fcwErr.classList.add('show'); }
+function clearErr() { fcwErr.textContent=''; fcwErr.classList.remove('show'); }
+</script>
+</body>
+</html>
