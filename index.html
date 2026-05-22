@@ -926,7 +926,7 @@ footer{
       <li><a href="#faq" class="nav__link">FAQ</a></li>
     </ul>
     <div class="nav__cta">
-      <a href="mailto:mobotechnology365@gmail.com" class="btn btn-primary">Get Started →</a>
+      <a href="#" class="btn btn-primary" data-open-contact>Get Started →</a>
     </div>
     <button class="nav__ham" id="ham" aria-label="Open menu" aria-expanded="false" aria-controls="mmenu">
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
@@ -942,7 +942,7 @@ footer{
   <a href="#process"   class="mmenu__link" data-mm>How It Works</a>
   <a href="#team"      class="mmenu__link" data-mm>Team</a>
   <a href="#faq"       class="mmenu__link" data-mm>FAQ</a>
-  <a href="mailto:mobotechnology365@gmail.com" class="btn btn-primary btn-lg" style="margin-top:1.5rem;width:100%;justify-content:center">Get Started →</a>
+  <a href="#" class="btn btn-primary btn-lg" style="margin-top:1.5rem;width:100%;justify-content:center" data-open-contact>Get Started →</a>
 </div>
 
 <main id="main">
@@ -961,7 +961,7 @@ footer{
         Mobotechnology delivers AI-powered sales and marketing automation that fills your pipeline, nurtures leads, and accelerates revenue — intelligently, at scale, without adding headcount.
       </p>
       <div class="hero__ctas fade-up">
-        <a href="mailto:mobotechnology365@gmail.com" class="btn btn-primary btn-lg">Book a Free Strategy Call →</a>
+        <a href="#" class="btn btn-primary btn-lg" data-open-contact>Book a Free Strategy Call →</a>
         <a href="#services" class="btn btn-outline btn-lg">Explore Services</a>
       </div>
       <div class="hero__stats fade-up" aria-label="Key metrics">
@@ -1521,8 +1521,8 @@ footer{
       <h2 class="h2">Ready to transform<br>your revenue engine?</h2>
       <p class="body-lg">Book a free 30-minute strategy call. We'll audit your process, identify your biggest automation opportunities, and show you exactly how we'd scale your results — no commitment required.</p>
       <div class="cta-btns">
-        <a href="mailto:mobotechnology365@gmail.com" class="btn btn-white btn-lg">Book a Free Strategy Call →</a>
-        <a href="mailto:mobotechnology365@gmail.com" class="btn btn-lg" style="background:rgba(255,255,255,.1);color:#fff;border-color:rgba(255,255,255,.2)">Send Us a Message</a>
+        <a href="#" class="btn btn-white btn-lg" data-open-contact>Book a Free Strategy Call →</a>
+        <a href="#" class="btn btn-lg" style="background:rgba(255,255,255,.1);color:#fff;border-color:rgba(255,255,255,.2)" data-open-contact>Send Us a Message</a>
       </div>
       <p class="cta-note">Or email us directly at <a href="mailto:mobotechnology365@gmail.com">mobotechnology365@gmail.com</a></p>
     </div>
@@ -1550,7 +1550,7 @@ footer{
       </div>
       <div class="ft-col"><h4>Services</h4><ul><li><a href="#services">AI Sales Automation</a></li><li><a href="#services">Marketing Automation</a></li><li><a href="#services">Revenue Intelligence</a></li><li><a href="#services">CRM Integration</a></li><li><a href="#services">Conversational AI</a></li><li><a href="#services">Custom Workflows</a></li></ul></div>
       <div class="ft-col"><h4>Company</h4><ul><li><a href="#team">About Us</a></li><li><a href="#team">Leadership</a></li><li><a href="#process">How It Works</a></li><li><a href="#testimonials">Case Studies</a></li><li><a href="#faq">FAQ</a></li></ul></div>
-      <div class="ft-col"><h4>Contact</h4><ul><li><a href="mailto:mobotechnology365@gmail.com">mobotechnology365@gmail.com</a></li><li><a href="#contact">Casper, Wyoming, US</a></li><li><a href="#contact">Book a Strategy Call</a></li></ul></div>
+      <div class="ft-col"><h4>Contact</h4><ul><li><a href="mailto:mobotechnology365@gmail.com">mobotechnology365@gmail.com</a></li><li><a href="#contact">Casper, Wyoming, US</a></li><li><a href="#" data-open-contact>Book a Strategy Call</a></li></ul></div>
     </div>
     <div class="ft-bottom">
       <p>© 2025 Mobotechnology LLC. All rights reserved.</p>
@@ -1732,6 +1732,13 @@ function closeFcw() {
 
 fcwFab.addEventListener('click', () => fcwOpen ? closeFcw() : openFcw());
 fcwClose.addEventListener('click', closeFcw);
+
+document.addEventListener('click', e => {
+  const btn = e.target.closest('[data-open-contact]');
+  if (!btn) return;
+  e.preventDefault();
+  openFcw();
+});
 
 fcwForm.addEventListener('submit', async e => {
   e.preventDefault();
