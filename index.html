@@ -416,114 +416,104 @@ p,h1,h2,h3,h4{overflow-wrap:break-word;word-break:break-word;}
 /* ─────────────────────────────────────────────────────
    SERVICE CARDS
 ───────────────────────────────────────────────────── */
-/* ─── SERVICES SHOWCASE ────────────────────────────── */
-.svc-showcase{
-  display:grid;
-  grid-template-columns:248px 1fr;
-  gap:2rem;
-  align-items:start;
-  margin-top:clamp(2rem,5vw,3rem);
+/* ─── SERVICES ROWS ────────────────────────────────── */
+.svc-hd{padding-block:var(--sec) clamp(1.5rem,3vw,2.5rem);}
+.svc-row-bg{
+  position:relative;overflow:hidden;
+  min-height:80vh;
+  display:flex;align-items:center;
 }
-.svc-tabs{
-  display:flex;flex-direction:column;gap:.25rem;
-  position:sticky;top:calc(var(--nav-h) + 1.5rem);
-}
-.svc-tab{
-  display:flex;align-items:center;gap:.75rem;
-  padding:.75rem 1rem;
-  border-radius:var(--r-md);
-  text-align:left;width:100%;
-  border:1.5px solid transparent;
-  background:transparent;
-  transition:background 160ms var(--ease),border-color 160ms,color 160ms;
-}
-.svc-tab__num{
-  font-family:var(--fd);font-size:.6875rem;font-weight:700;
-  color:var(--tm);min-width:1.375rem;flex-shrink:0;
-  transition:color 160ms;letter-spacing:.03em;
-}
-.svc-tab__name{
-  font-family:var(--fd);font-size:.875rem;font-weight:600;
-  color:var(--tb);line-height:1.3;transition:color 160ms;
-}
-.svc-tab.active{background:var(--b50);border-color:var(--b200);}
-.svc-tab.active .svc-tab__num{color:var(--b500);}
-.svc-tab.active .svc-tab__name{color:var(--b700);}
-@media(hover:hover){
-  .svc-tab:not(.active):hover{background:var(--soft);border-color:var(--n200);}
-}
-.svc-panel-wrap{position:relative;min-height:400px;}
-.svc-panel{
+.svc-rows .svc-row-bg:nth-child(odd){background:var(--white);}
+.svc-rows .svc-row-bg:nth-child(even){background:var(--soft);}
+.svc-row{
+  width:100%;
   display:grid;
   grid-template-columns:1fr 1fr;
-  gap:clamp(1.5rem,3vw,2.5rem);
+  gap:clamp(3rem,6vw,5.5rem);
   align-items:center;
-  background:var(--white);
-  border:1.5px solid var(--n200);
+  padding-block:clamp(4rem,8vw,6rem);
+  max-width:var(--wrap);
+  margin-inline:auto;
+  padding-inline:var(--pad);
+}
+.svc-row-bg--alt .svc-row__visual{order:2;}
+.svc-row-bg--alt .svc-row__content{order:1;}
+.svc-row__num{
+  position:absolute;bottom:-0.1em;right:2vw;
+  font-family:var(--fd);font-size:clamp(8rem,14vw,14rem);
+  font-weight:800;color:var(--b500);
+  opacity:.035;line-height:1;
+  pointer-events:none;user-select:none;letter-spacing:-0.05em;
+}
+.svc-row-bg--alt .svc-row__num{right:auto;left:2vw;}
+.svc-row__visual{display:flex;align-items:center;justify-content:center;}
+.svc-row__visual svg{
+  width:100%;max-width:520px;height:auto;display:block;
   border-radius:var(--r-2xl);
-  padding:clamp(1.75rem,3.5vw,2.5rem);
-  box-shadow:var(--sh2);
-  position:absolute;width:100%;top:0;
-  opacity:0;pointer-events:none;
-  transform:translateY(14px);
-  transition:opacity 300ms var(--ease),transform 300ms var(--ease);
+  box-shadow:var(--sh3);
 }
-.svc-panel.active{
-  opacity:1;pointer-events:auto;
-  transform:translateY(0);
-  position:relative;
-}
-.svc-panel__visual{
-  aspect-ratio:1/1;
-  border-radius:var(--r-xl);
-  overflow:hidden;
-  background:var(--soft);
-  border:1.5px solid var(--n200);
-  display:flex;align-items:center;justify-content:center;
-}
-.svc-panel__visual svg{width:100%;height:100%;display:block;}
-.svc-panel__tag{
+.svc-row__tag{
   display:inline-flex;align-items:center;
   background:var(--b50);color:var(--b600);
   font-size:.6875rem;font-weight:700;font-family:var(--fd);
   text-transform:uppercase;letter-spacing:.07em;
   padding:.3rem .75rem;border-radius:var(--r-pill);
-  margin-bottom:.875rem;
-  border:1px solid var(--b100);
+  margin-bottom:1rem;border:1px solid var(--b100);
 }
-.svc-panel__content h3{
+.svc-row__content h3{
   font-family:var(--fd);
-  font-size:clamp(1.2rem,2vw,1.5rem);
+  font-size:clamp(1.5rem,3vw,2.125rem);
   font-weight:700;color:var(--th);
-  margin-bottom:.75rem;line-height:1.25;
+  margin-bottom:1rem;line-height:1.2;
 }
-.svc-panel__content p{
-  color:var(--tb);line-height:1.75;
-  font-size:clamp(.875rem,1.3vw,.9375rem);
-  margin-bottom:1.375rem;
+.svc-row__content p{
+  color:var(--tb);line-height:1.78;
+  font-size:clamp(.9375rem,1.5vw,1.0625rem);
+  margin-bottom:1.75rem;
 }
-.svc-bullets{display:flex;flex-direction:column;gap:.5rem;}
+.svc-bullets{display:flex;flex-direction:column;gap:.625rem;}
 .svc-bullets li{
-  display:flex;align-items:center;gap:.625rem;
-  font-size:.875rem;color:var(--n700);font-weight:500;
+  display:flex;align-items:center;gap:.75rem;
+  font-size:.9375rem;color:var(--n700);font-weight:500;
 }
 .svc-bullets li::before{
-  content:'';width:6px;height:6px;border-radius:50%;
+  content:'';width:7px;height:7px;border-radius:50%;
   background:var(--g-brand);flex-shrink:0;
 }
+/* ── Scroll animations ───────────────────────────── */
+@media(prefers-reduced-motion:no-preference){
+  .svc-row__visual{
+    opacity:0;transform:translateX(64px);
+    transition:opacity 750ms var(--ease),transform 750ms var(--ease);
+  }
+  .svc-row-bg--alt .svc-row__visual{transform:translateX(-64px);}
+  .svc-row__content{
+    opacity:0;transform:translateX(-44px);
+    transition:opacity 650ms var(--ease) 120ms,transform 650ms var(--ease) 120ms;
+  }
+  .svc-row-bg--alt .svc-row__content{transform:translateX(44px);}
+  .svc-bullets li{
+    opacity:0;transform:translateY(10px);
+    transition:opacity 380ms var(--ease),transform 380ms var(--ease);
+  }
+  .svc-row-bg.in-view .svc-row__visual,
+  .svc-row-bg.in-view .svc-row__content{opacity:1;transform:translate(0);}
+  .svc-row-bg.in-view .svc-bullets li{opacity:1;transform:translateY(0);}
+  .svc-row-bg.in-view .svc-bullets li:nth-child(1){transition-delay:380ms;}
+  .svc-row-bg.in-view .svc-bullets li:nth-child(2){transition-delay:460ms;}
+  .svc-row-bg.in-view .svc-bullets li:nth-child(3){transition-delay:540ms;}
+  .svc-row-bg.in-view .svc-bullets li:nth-child(4){transition-delay:620ms;}
+}
 @media(max-width:767px){
-  .svc-showcase{grid-template-columns:1fr;gap:1.25rem;}
-  .svc-tabs{flex-direction:row;flex-wrap:wrap;gap:.375rem;position:static;}
-  .svc-tab{padding:.4375rem .875rem;border-radius:var(--r-pill);}
-  .svc-tab__num{display:none;}
-  .svc-tab__name{font-size:.8rem;}
-  .svc-panel{grid-template-columns:1fr;gap:1.5rem;position:relative;}
-  .svc-panel:not(.active){display:none;}
-  .svc-panel__visual{aspect-ratio:4/3;}
+  .svc-row-bg{min-height:auto;}
+  .svc-row{grid-template-columns:1fr;gap:2rem;}
+  .svc-row-bg--alt .svc-row__visual,
+  .svc-row-bg--alt .svc-row__content{order:unset;}
+  .svc-row__num{display:none;}
 }
 @media(min-width:768px) and (max-width:1023px){
-  .svc-showcase{grid-template-columns:200px 1fr;}
-  .svc-panel{grid-template-columns:1fr 1fr;}
+  .svc-row-bg{min-height:60vh;}
+  .svc-row{gap:3rem;}
 }
 
 /* ─────────────────────────────────────────────────────
@@ -1012,29 +1002,22 @@ footer{
 </div>
 
 <!-- ══ SERVICES ══════════════════════════════════════════ -->
-<section class="section" id="services">
-  <div class="wrap">
-    <div class="sec-head fade-up">
-      <div class="eyebrow"><span class="eyebrow__dot"></span><span class="eyebrow__text">Our Services</span></div>
-      <h2 class="h2">Everything you need to<br><span class="grad-text">dominate your market</span></h2>
-      <p class="body-lg" style="max-width:540px;margin-top:.875rem">From intelligent lead generation to full-funnel revenue automation — systems that turn sales and marketing into a scalable growth engine.</p>
+<section id="services">
+  <div class="svc-hd">
+    <div class="wrap">
+      <div class="sec-head fade-up">
+        <div class="eyebrow"><span class="eyebrow__dot"></span><span class="eyebrow__text">Our Services</span></div>
+        <h2 class="h2">Everything you need to<br><span class="grad-text">dominate your market</span></h2>
+        <p class="body-lg" style="max-width:540px;margin-top:.875rem">From intelligent lead generation to full-funnel revenue automation — systems that turn sales and marketing into a scalable growth engine.</p>
+      </div>
     </div>
-    <div class="svc-showcase fade-up">
-      <!-- Tab list -->
-      <nav class="svc-tabs" role="tablist" aria-label="Our services">
-        <button class="svc-tab active" role="tab" aria-selected="true" aria-controls="sp-0" data-svc="0"><span class="svc-tab__num">01</span><span class="svc-tab__name">AI Sales Automation</span></button>
-        <button class="svc-tab" role="tab" aria-selected="false" aria-controls="sp-1" data-svc="1"><span class="svc-tab__num">02</span><span class="svc-tab__name">Marketing Automation</span></button>
-        <button class="svc-tab" role="tab" aria-selected="false" aria-controls="sp-2" data-svc="2"><span class="svc-tab__num">03</span><span class="svc-tab__name">Revenue Intelligence</span></button>
-        <button class="svc-tab" role="tab" aria-selected="false" aria-controls="sp-3" data-svc="3"><span class="svc-tab__num">04</span><span class="svc-tab__name">CRM Integration</span></button>
-        <button class="svc-tab" role="tab" aria-selected="false" aria-controls="sp-4" data-svc="4"><span class="svc-tab__num">05</span><span class="svc-tab__name">Conversational AI</span></button>
-        <button class="svc-tab" role="tab" aria-selected="false" aria-controls="sp-5" data-svc="5"><span class="svc-tab__num">06</span><span class="svc-tab__name">Custom AI Workflows</span></button>
-      </nav>
-      <!-- Panels -->
-      <div class="svc-panel-wrap">
-
-        <!-- 01 AI Sales Automation -->
-        <div class="svc-panel active" id="sp-0" role="tabpanel" aria-labelledby="st-0">
-          <div class="svc-panel__visual">
+  </div>
+  <div class="svc-rows">
+    <!-- 01 AI Sales Automation -->
+    <div class="svc-row-bg" id="svc-r-0">
+      <span class="svc-row__num" aria-hidden="true">01</span>
+      <div class="svc-row">
+        <div class="svc-row__visual">
             <svg viewBox="0 0 320 280" xmlns="http://www.w3.org/2000/svg">
               <defs>
                 <linearGradient id="s1g1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#5B47F5"/><stop offset="100%" stop-color="#9333EA"/></linearGradient>
@@ -1072,22 +1055,25 @@ footer{
               <text x="55" y="236" text-anchor="middle" fill="#10B981" font-family="Poppins,sans-serif" font-size="14" font-weight="700">36.8%</text>
             </svg>
           </div>
-          <div class="svc-panel__content">
-            <div class="svc-panel__tag">Sales</div>
-            <h3>AI Sales Automation</h3>
-            <p>Intelligent lead scoring, automated outreach sequences, and real-time prospect insights that keep your pipeline full and moving — without manual effort.</p>
-            <ul class="svc-bullets">
-              <li>AI-powered lead scoring &amp; prioritization</li>
-              <li>Automated multi-step outreach sequences</li>
-              <li>Real-time prospect intent signals</li>
-              <li>Pipeline health monitoring &amp; alerts</li>
-            </ul>
-          </div>
+        <div class="svc-row__content">
+          <div class="svc-row__tag">Sales</div>
+          <h3 class="h3">AI Sales Automation</h3>
+          <p>Intelligent lead scoring, automated outreach sequences, and real-time prospect insights that keep your pipeline full and moving — without manual effort.</p>
+          <ul class="svc-bullets">
+            <li>AI-powered lead scoring &amp; prioritization</li>
+            <li>Automated multi-step outreach sequences</li>
+            <li>Real-time prospect intent signals</li>
+            <li>Pipeline health monitoring &amp; alerts</li>
+          </ul>
         </div>
+      </div>
+    </div>
 
-        <!-- 02 Marketing Automation -->
-        <div class="svc-panel" id="sp-1" role="tabpanel" aria-labelledby="st-1">
-          <div class="svc-panel__visual">
+    <!-- 02 Marketing Automation -->
+    <div class="svc-row-bg svc-row-bg--alt" id="svc-r-1">
+      <span class="svc-row__num" aria-hidden="true">02</span>
+      <div class="svc-row">
+        <div class="svc-row__visual">
             <svg viewBox="0 0 320 280" xmlns="http://www.w3.org/2000/svg">
               <defs>
                 <radialGradient id="s2hub" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#5B47F5"/><stop offset="100%" stop-color="#9333EA"/></radialGradient>
@@ -1136,22 +1122,25 @@ footer{
               <text x="258" y="263" text-anchor="middle" fill="#5B47F5" font-family="Poppins,sans-serif" font-size="9" font-weight="600">3× Revenue</text>
             </svg>
           </div>
-          <div class="svc-panel__content">
-            <div class="svc-panel__tag">Marketing</div>
-            <h3>Marketing Automation</h3>
-            <p>Multi-channel campaigns that think. Deliver hyper-personalized experiences to the right audience at precisely the right moment across every touchpoint.</p>
-            <ul class="svc-bullets">
-              <li>Omni-channel campaign orchestration</li>
-              <li>Behavioral segmentation &amp; targeting</li>
-              <li>A/B testing with AI optimization</li>
-              <li>Attribution reporting across channels</li>
-            </ul>
-          </div>
+        <div class="svc-row__content">
+          <div class="svc-row__tag">Marketing</div>
+          <h3 class="h3">Marketing Automation</h3>
+          <p>Multi-channel campaigns that think. Deliver hyper-personalized experiences to the right audience at precisely the right moment across every touchpoint.</p>
+          <ul class="svc-bullets">
+            <li>Omni-channel campaign orchestration</li>
+            <li>Behavioral segmentation &amp; targeting</li>
+            <li>A/B testing with AI optimization</li>
+            <li>Attribution reporting across channels</li>
+          </ul>
         </div>
+      </div>
+    </div>
 
-        <!-- 03 Revenue Intelligence -->
-        <div class="svc-panel" id="sp-2" role="tabpanel" aria-labelledby="st-2">
-          <div class="svc-panel__visual">
+    <!-- 03 Revenue Intelligence -->
+    <div class="svc-row-bg" id="svc-r-2">
+      <span class="svc-row__num" aria-hidden="true">03</span>
+      <div class="svc-row">
+        <div class="svc-row__visual">
             <svg viewBox="0 0 320 280" xmlns="http://www.w3.org/2000/svg">
               <defs>
                 <linearGradient id="s3area" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#5B47F5" stop-opacity=".35"/><stop offset="100%" stop-color="#5B47F5" stop-opacity="0"/></linearGradient>
@@ -1190,22 +1179,25 @@ footer{
               <text x="272" y="228" fill="#8A93AD" font-family="Poppins,sans-serif" font-size="8.5">Nov</text>
             </svg>
           </div>
-          <div class="svc-panel__content">
-            <div class="svc-panel__tag">Analytics</div>
-            <h3>Revenue Intelligence</h3>
-            <p>Predictive AI analytics surface pipeline risks and growth opportunities before they're obvious — so your team always acts on what matters most.</p>
-            <ul class="svc-bullets">
-              <li>Predictive pipeline forecasting</li>
-              <li>Win/loss pattern analysis</li>
-              <li>Churn risk detection &amp; early alerts</li>
-              <li>Revenue attribution dashboards</li>
-            </ul>
-          </div>
+        <div class="svc-row__content">
+          <div class="svc-row__tag">Analytics</div>
+          <h3 class="h3">Revenue Intelligence</h3>
+          <p>Predictive AI analytics surface pipeline risks and growth opportunities before they're obvious — so your team always acts on what matters most.</p>
+          <ul class="svc-bullets">
+            <li>Predictive pipeline forecasting</li>
+            <li>Win/loss pattern analysis</li>
+            <li>Churn risk detection &amp; early alerts</li>
+            <li>Revenue attribution dashboards</li>
+          </ul>
         </div>
+      </div>
+    </div>
 
-        <!-- 04 CRM Integration -->
-        <div class="svc-panel" id="sp-3" role="tabpanel" aria-labelledby="st-3">
-          <div class="svc-panel__visual">
+    <!-- 04 CRM Integration -->
+    <div class="svc-row-bg svc-row-bg--alt" id="svc-r-3">
+      <span class="svc-row__num" aria-hidden="true">04</span>
+      <div class="svc-row">
+        <div class="svc-row__visual">
             <svg viewBox="0 0 320 280" xmlns="http://www.w3.org/2000/svg">
               <defs>
                 <linearGradient id="s4hub" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#5B47F5"/><stop offset="100%" stop-color="#9333EA"/></linearGradient>
@@ -1245,22 +1237,25 @@ footer{
               <text x="260" y="228" text-anchor="middle" fill="#10B981" font-family="Poppins,sans-serif" font-size="8" font-weight="600">● Live</text>
             </svg>
           </div>
-          <div class="svc-panel__content">
-            <div class="svc-panel__tag">Integration</div>
-            <h3>CRM Integration &amp; Optimization</h3>
-            <p>We connect and supercharge your CRM — Salesforce, HubSpot, or any platform — with AI-driven workflows that eliminate data silos and manual entry for good.</p>
-            <ul class="svc-bullets">
-              <li>50+ pre-built platform connectors</li>
-              <li>Real-time data sync &amp; enrichment</li>
-              <li>Automated data hygiene &amp; deduplication</li>
-              <li>Custom API integrations on request</li>
-            </ul>
-          </div>
+        <div class="svc-row__content">
+          <div class="svc-row__tag">Integration</div>
+          <h3 class="h3">CRM Integration &amp; Optimization</h3>
+          <p>We connect and supercharge your CRM — Salesforce, HubSpot, or any platform — with AI-driven workflows that eliminate data silos and manual entry for good.</p>
+          <ul class="svc-bullets">
+            <li>50+ pre-built platform connectors</li>
+            <li>Real-time data sync &amp; enrichment</li>
+            <li>Automated data hygiene &amp; deduplication</li>
+            <li>Custom API integrations on request</li>
+          </ul>
         </div>
+      </div>
+    </div>
 
-        <!-- 05 Conversational AI -->
-        <div class="svc-panel" id="sp-4" role="tabpanel" aria-labelledby="st-4">
-          <div class="svc-panel__visual">
+    <!-- 05 Conversational AI -->
+    <div class="svc-row-bg" id="svc-r-4">
+      <span class="svc-row__num" aria-hidden="true">05</span>
+      <div class="svc-row">
+        <div class="svc-row__visual">
             <svg viewBox="0 0 320 280" xmlns="http://www.w3.org/2000/svg">
               <defs>
                 <linearGradient id="s5g" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#5B47F5"/><stop offset="100%" stop-color="#9333EA"/></linearGradient>
@@ -1295,22 +1290,25 @@ footer{
               <circle cx="132" cy="243" r="3" fill="#8A93AD" opacity=".25"/>
             </svg>
           </div>
-          <div class="svc-panel__content">
-            <div class="svc-panel__tag">Conversational AI</div>
-            <h3>Conversational AI &amp; Chatbots</h3>
-            <p>Intelligent chatbots that qualify leads, schedule demos, and nurture prospects around the clock — without adding headcount to your team.</p>
-            <ul class="svc-bullets">
-              <li>24/7 lead qualification &amp; routing</li>
-              <li>Automated demo booking &amp; scheduling</li>
-              <li>Natural language understanding (NLU)</li>
-              <li>Seamless handoff to human agents</li>
-            </ul>
-          </div>
+        <div class="svc-row__content">
+          <div class="svc-row__tag">Conversational AI</div>
+          <h3 class="h3">Conversational AI &amp; Chatbots</h3>
+          <p>Intelligent chatbots that qualify leads, schedule demos, and nurture prospects around the clock — without adding headcount to your team.</p>
+          <ul class="svc-bullets">
+            <li>24/7 lead qualification &amp; routing</li>
+            <li>Automated demo booking &amp; scheduling</li>
+            <li>Natural language understanding (NLU)</li>
+            <li>Seamless handoff to human agents</li>
+          </ul>
         </div>
+      </div>
+    </div>
 
-        <!-- 06 Custom AI Workflows -->
-        <div class="svc-panel" id="sp-5" role="tabpanel" aria-labelledby="st-5">
-          <div class="svc-panel__visual">
+    <!-- 06 Custom AI Workflows -->
+    <div class="svc-row-bg svc-row-bg--alt" id="svc-r-5">
+      <span class="svc-row__num" aria-hidden="true">06</span>
+      <div class="svc-row">
+        <div class="svc-row__visual">
             <svg viewBox="0 0 320 280" xmlns="http://www.w3.org/2000/svg">
               <defs>
                 <linearGradient id="s6g" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#5B47F5"/><stop offset="100%" stop-color="#9333EA"/></linearGradient>
@@ -1353,22 +1351,21 @@ footer{
               <text x="160" y="253" text-anchor="middle" fill="#5B47F5" font-family="Poppins,sans-serif" font-size="9.5" font-weight="700">Log &amp; Optimize ✓</text>
             </svg>
           </div>
-          <div class="svc-panel__content">
-            <div class="svc-panel__tag">Custom Build</div>
-            <h3>Custom AI Workflows</h3>
-            <p>Bespoke automation systems built around your exact sales process, tech stack, and growth objectives. Nothing off-the-shelf. Everything intentional.</p>
-            <ul class="svc-bullets">
-              <li>Fully tailored to your sales process</li>
-              <li>Integrates with any existing stack</li>
-              <li>Continuous learning &amp; optimization</li>
-              <li>Dedicated engineering team support</li>
-            </ul>
-          </div>
+        <div class="svc-row__content">
+          <div class="svc-row__tag">Custom Build</div>
+          <h3 class="h3">Custom AI Workflows</h3>
+          <p>Bespoke automation systems built around your exact sales process, tech stack, and growth objectives. Nothing off-the-shelf. Everything intentional.</p>
+          <ul class="svc-bullets">
+            <li>Fully tailored to your sales process</li>
+            <li>Integrates with any existing stack</li>
+            <li>Continuous learning &amp; optimization</li>
+            <li>Dedicated engineering team support</li>
+          </ul>
         </div>
-
       </div>
     </div>
-  </div>
+
+  </div><!-- /svc-rows -->
 </section>
 
 <!-- ══ PROCESS ════════════════════════════════════════════ -->
@@ -1626,16 +1623,15 @@ mmc.addEventListener('click', closeMM);
 mm.addEventListener('click', e => e.target===mm && closeMM());
 mm.querySelectorAll('[data-mm]').forEach(l => l.addEventListener('click', closeMM));
 
-/* ── Services tabs ───────────────────────────────── */
-const svcTabs   = document.querySelectorAll('.svc-tab');
-const svcPanels = document.querySelectorAll('.svc-panel');
-svcTabs.forEach(tab => {
-  tab.addEventListener('click', () => {
-    const idx = +tab.dataset.svc;
-    svcTabs.forEach((t, i) => { t.classList.toggle('active', i===idx); t.setAttribute('aria-selected', i===idx); });
-    svcPanels.forEach((p, i) => p.classList.toggle('active', i===idx));
+/* ── Services scroll reveal ─────────────────────── */
+const svcIO = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (!e.isIntersecting) return;
+    e.target.classList.add('in-view');
+    svcIO.unobserve(e.target);
   });
-});
+}, { threshold: 0.18 });
+document.querySelectorAll('.svc-row-bg').forEach(r => svcIO.observe(r));
 
 /* ── FAQ accordion ───────────────────────────────── */
 document.querySelectorAll('.faq__q').forEach(btn => {
