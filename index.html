@@ -731,9 +731,20 @@ footer{
   gap:.75rem;flex-direction:column;text-align:center;
 }
 .ft-bottom p{font-size:.875rem;color:var(--dkt3);}
-.ft-legal{display:flex;gap:1.25rem;flex-wrap:wrap;justify-content:center;}
-.ft-legal a{font-size:.875rem;color:var(--dkt3);transition:color 150ms;min-height:var(--touch);display:flex;align-items:center;}
-@media(hover:hover){.ft-legal a:hover{color:var(--dkt1);}}
+.ft-legal{display:flex;gap:.625rem;flex-wrap:wrap;justify-content:center;}
+.ft-legal a{
+  display:inline-flex;align-items:center;gap:.45rem;
+  min-height:var(--touch);padding:.5rem 1.0625rem;
+  font-size:.875rem;font-weight:500;color:var(--dkt2);
+  border:1px solid rgba(255,255,255,.12);border-radius:var(--r-pill);
+  background:rgba(255,255,255,.05);
+  transition:color 160ms var(--ease),background 160ms var(--ease),border-color 160ms var(--ease),transform 160ms var(--ease);
+}
+.ft-legal a svg{width:14px;height:14px;flex-shrink:0;color:var(--b400);}
+@media(hover:hover){.ft-legal a:hover{color:#fff;background:rgba(255,255,255,.11);border-color:rgba(255,255,255,.22);transform:translateY(-1px);}}
+.ft-legal a:active{transform:translateY(0) scale(.97);}
+/* Keep the last footer row clear of the floating contact button on small screens */
+@media(max-width:599px){footer{padding-bottom:max(calc(env(safe-area-inset-bottom) + 6rem),6rem);}}
 
 /* ─────────────────────────────────────────────────────
    FLOATING CONTACT WIDGET
@@ -743,6 +754,7 @@ footer{
   bottom:max(1.25rem,env(safe-area-inset-bottom,1.25rem));
   right:max(1.25rem,env(safe-area-inset-right,1.25rem));
   z-index:900;display:flex;flex-direction:column;align-items:flex-end;gap:.875rem;
+  pointer-events:none; /* container is a layout box only — never blocks the page beneath */
 }
 .fcw__panel{
   width:min(360px,calc(100vw - 2.5rem));
@@ -756,7 +768,7 @@ footer{
   opacity:0;pointer-events:none;
   transition:transform 320ms var(--spring),opacity 240ms var(--ease);
 }
-.fcw__panel.open{transform:scale(1) translateY(0);opacity:1;pointer-events:all;}
+.fcw__panel.open{transform:scale(1) translateY(0);opacity:1;pointer-events:auto;}
 .fcw__head{
   display:flex;align-items:center;justify-content:space-between;gap:1rem;
   padding:1.0625rem 1.25rem;
@@ -814,6 +826,7 @@ footer{
 .fcw__success p{font-size:.875rem;color:var(--tb);line-height:1.65;margin-bottom:1.25rem;}
 /* FAB */
 .fcw__fab{
+  pointer-events:auto;
   position:relative;width:56px;height:56px;border-radius:50%;
   background:var(--g-brand);
   box-shadow:var(--sh-b),0 4px 20px rgba(91,71,245,.35);
@@ -1555,19 +1568,22 @@ footer{
         </div>
       </div>
       <div class="ft-col"><h4>Services</h4><ul><li><a href="#services">AI Sales Automation</a></li><li><a href="#services">Marketing Automation</a></li><li><a href="#services">Revenue Intelligence</a></li><li><a href="#services">CRM Integration</a></li><li><a href="#services">Conversational AI</a></li><li><a href="#services">Custom Workflows</a></li></ul></div>
-      <div class="ft-col"><h4>Company</h4><ul><li><a href="#team">About Us</a></li><li><a href="#team">Leadership</a></li><li><a href="#process">How It Works</a></li><li><a href="#testimonials">Case Studies</a></li><li><a href="#faq">FAQ</a></li></ul></div>
+      <div class="ft-col"><h4>Company</h4><ul><li><a href="#team">About Us</a></li><li><a href="#team">Leadership</a></li><li><a href="#process">How It Works</a></li><li><a href="#testimonials">Case Studies</a></li><li><a href="#faq">FAQ</a></li><li><a href="./privacy-policy.html">Privacy Policy</a></li><li><a href="./terms-and-conditions.html">Terms &amp; Conditions</a></li></ul></div>
       <div class="ft-col"><h4>Contact</h4><ul><li><a href="mailto:mobotechnology365@gmail.com">mobotechnology365@gmail.com</a></li><li><a href="#contact">Casper, Wyoming, US</a></li><li><a href="#" data-open-contact>Book a Strategy Call</a></li></ul></div>
     </div>
     <div class="ft-bottom">
       <p>© 2026 Mobotechnology LLC. All rights reserved.</p>
-      <div class="ft-legal"><a href="./privacy-policy.html">Privacy Policy</a><a href="./terms-and-conditions.html">Terms &amp; Conditions</a></div>
+      <div class="ft-legal">
+        <a href="./privacy-policy.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Privacy Policy</a>
+        <a href="./terms-and-conditions.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>Terms &amp; Conditions</a>
+      </div>
     </div>
   </div>
 </footer>
 
 <!-- ══ FLOATING CONTACT WIDGET ════════════════════════════ -->
 <div class="fcw" id="fcw">
-  <div class="fcw__panel" id="fcwPanel" role="dialog" aria-label="Contact us" aria-modal="false">
+  <div class="fcw__panel" id="fcwPanel" role="dialog" aria-label="Contact us" aria-modal="false" hidden>
     <div class="fcw__head">
       <div class="fcw__head-info">
         <div class="fcw__online" aria-hidden="true"></div>

@@ -618,10 +618,19 @@ footer{
   gap:.75rem;flex-direction:column;text-align:center;
 }
 .ft-bottom p{font-size:.875rem;color:var(--dkt3);}
-.ft-legal{display:flex;gap:1.25rem;flex-wrap:wrap;justify-content:center;}
-.ft-legal a{font-size:.875rem;color:var(--dkt3);transition:color 150ms;min-height:var(--touch);display:flex;align-items:center;}
-.ft-legal a[aria-current="page"]{color:var(--dkt1);font-weight:600;}
-@media(hover:hover){.ft-legal a:hover{color:var(--dkt1);}}
+.ft-legal{display:flex;gap:.625rem;flex-wrap:wrap;justify-content:center;}
+.ft-legal a{
+  display:inline-flex;align-items:center;gap:.45rem;
+  min-height:var(--touch);padding:.5rem 1.0625rem;
+  font-size:.875rem;font-weight:500;color:var(--dkt2);
+  border:1px solid rgba(255,255,255,.12);border-radius:var(--r-pill);
+  background:rgba(255,255,255,.05);
+  transition:color 160ms var(--ease),background 160ms var(--ease),border-color 160ms var(--ease),transform 160ms var(--ease);
+}
+.ft-legal a svg{width:14px;height:14px;flex-shrink:0;color:var(--b400);}
+.ft-legal a[aria-current="page"]{color:#fff;background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.22);}
+@media(hover:hover){.ft-legal a:hover{color:#fff;background:rgba(255,255,255,.11);border-color:rgba(255,255,255,.22);transform:translateY(-1px);}}
+.ft-legal a:active{transform:translateY(0) scale(.97);}
 
 /* ─────────────────────────────────────────────────────
    ANIMATIONS
