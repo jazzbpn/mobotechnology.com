@@ -275,6 +275,12 @@ p,h1,h2,h3,h4{overflow-wrap:break-word;word-break:break-word;}
   border-radius:var(--r-md);transition:all 150ms var(--ease);
 }
 @media(hover:hover){.nav__link:hover{color:var(--th);background:var(--soft);}}
+/* 768–1023px: keep nav links on one line beside the CTA */
+@media(min-width:768px) and (max-width:1023px){
+  .nav__inner{gap:1rem;}
+  .nav__link{padding-inline:.625rem;font-size:.875rem;white-space:nowrap;}
+  .nav__cta .btn{padding-inline:1.25rem;}
+}
 .nav__cta{display:none;}
 .nav__ham{
   display:flex;align-items:center;justify-content:center;
@@ -926,7 +932,7 @@ footer{
       <li><a href="#faq" class="nav__link">FAQ</a></li>
     </ul>
     <div class="nav__cta">
-      <a href="#" class="btn btn-primary" data-open-contact>Get Started →</a>
+      <a href="#" class="btn btn-primary" data-open-contact>Contact Us →</a>
     </div>
     <button class="nav__ham" id="ham" aria-label="Open menu" aria-expanded="false" aria-controls="mmenu">
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
@@ -942,7 +948,7 @@ footer{
   <a href="#process"   class="mmenu__link" data-mm>How It Works</a>
   <a href="#team"      class="mmenu__link" data-mm>Team</a>
   <a href="#faq"       class="mmenu__link" data-mm>FAQ</a>
-  <a href="#" class="btn btn-primary btn-lg" style="margin-top:1.5rem;width:100%;justify-content:center" data-open-contact>Get Started →</a>
+  <a href="#" class="btn btn-primary btn-lg" style="margin-top:1.5rem;width:100%;justify-content:center" data-open-contact>Contact Us →</a>
 </div>
 
 <main id="main">
@@ -1553,8 +1559,8 @@ footer{
       <div class="ft-col"><h4>Contact</h4><ul><li><a href="mailto:mobotechnology365@gmail.com">mobotechnology365@gmail.com</a></li><li><a href="#contact">Casper, Wyoming, US</a></li><li><a href="#" data-open-contact>Book a Strategy Call</a></li></ul></div>
     </div>
     <div class="ft-bottom">
-      <p>© 2025 Mobotechnology LLC. All rights reserved.</p>
-      <div class="ft-legal"><a href="#">Privacy Policy</a><a href="#">Terms of Service</a></div>
+      <p>© 2026 Mobotechnology LLC. All rights reserved.</p>
+      <div class="ft-legal"><a href="./privacy-policy.html">Privacy Policy</a><a href="./terms-and-conditions.html">Terms &amp; Conditions</a></div>
     </div>
   </div>
 </footer>
@@ -1591,6 +1597,7 @@ footer{
           <span class="fcw__spinner" id="fcwSpin" style="display:none" aria-hidden="true"></span>
         </button>
         <p class="fcw__note">Or email <a href="mailto:mobotechnology365@gmail.com">mobotechnology365@gmail.com</a></p>
+        <p class="fcw__note">By sending, you agree to our <a href="./privacy-policy.html">Privacy Policy</a>.</p>
       </form>
       <div class="fcw__success" id="fcwOk" style="display:none" role="status">
         <div class="fcw__success-ico" aria-hidden="true">✓</div>
